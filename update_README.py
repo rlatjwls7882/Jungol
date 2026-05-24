@@ -9,6 +9,7 @@ from tqdm import tqdm
 
 HANDLE = "rlatjwls3333"
 BASE_URL = "https://jungol.co.kr"
+ACCOUNT_URL = f"{BASE_URL}/account/@{HANDLE}"
 
 INFO_CACHE = {}
 
@@ -31,22 +32,6 @@ EXT = {
 }
 
 
-def get_problem_url(problem_id):
-    return f"{BASE_URL}/problem/{problem_id}"
-
-
-def escape_markdown(text):
-    return text.replace("|", "\\|").strip()
-
-
-def normalize(text):
-    return re.sub(r"\s+", " ", text).strip()
-
-
-def make_markdown_path(path):
-    return quote(path.as_posix(), safe="/._-")
-
-
 def request_html(url):
     response = requests.get(
         url,
@@ -62,43 +47,86 @@ def request_html(url):
     return response.text
 
 
-def parse_problem_dir(dirname):
-    # 1000
-    # 01000
-    # 1000.문제이름 형태도 일단 허용
-    m = re.match(r"^(\d+)(?:\..*)?$", dirname)
-    if not m:
-        return None
+def normalize(text):
+    return re.sub(r"\s+", " ", text).strip()
 
-    problem_id_text = m.group(1)
-    problem_id = int(problem_id_text)
 
-    return problem_id, problem_id_text
+def escape_markdown(text):
+    return text.replace("|", "\\|").strip()
+
+
+def get_problem_url(problem_id):
+    return f"{BASE_URL}/problem/{problem_id}"
+
+
+def make_markdown_path(path):
+    return quote(path.as_posix(), safe="/._-")
+
+
+def get_group_dir(problem_id):
+    # 1000 -> 01xxx
+    # 12260 -> 12xxx
+    return f"{problem_id // 1000:02d}xxx"
+
+
+def get_solved_problem_ids():
+    html = request_html(ACCOUNT_URL)
+
+    start = html.find("해결한 문제")
+    if start == -1:
+        raise RuntimeError("계정 페이지에서 '해결한 문제' 영역을 찾지 못했습니다.")
+
+    end_candidates = [
+        html.find("틀린 문제", start),
+        html.find("티어 관련 정보", start),
+        html.find("소속 인증", start),
+    ]
+
+    end_candidates = [x for x in end_candidates if x != -1]
+    end = min(end_candidates) if end_candidates else len(html)
+
+    block = html[start:end]
+
+    problem_ids = set()
+
+    # 1순위: 링크에서 추출
+    for m in re.finditer(r"/problem/(\d+)", block):
+        problem_ids.add(int(m.group(1)))
+
+    # 2순위: 텍스트에서 추출
+    if not problem_ids:
+        soup = BeautifulSoup(block, "html.parser")
+        text = normalize(soup.get_text(" ", strip=True))
+
+        # 난이도 숫자 1~30을 피하려고 3자리 이상만 문제 번호로 취급
+        for m in re.finditer(r"(?<!\d)(\d{3,6})(?!\d)", text):
+            problem_ids.add(int(m.group(1)))
+
+    return sorted(problem_ids)
 
 
 def extract_title_from_html(html, problem_id):
     soup = BeautifulSoup(html, "html.parser")
 
-    # 가장 안정적: <title>두 정수 더하기 (A+B) - JUNGOL</title>
     if soup.title and soup.title.string:
         title = normalize(soup.title.string)
         title = re.sub(r"\s*-\s*JUNGOL\s*$", "", title)
+
         if title:
             return title
 
-    # fallback: 본문 텍스트에서 #번호 뒤쪽을 사용
     text = normalize(soup.get_text(" ", strip=True))
     marker = f"#{problem_id}"
     index = text.find(marker)
 
     if index != -1:
         segment = text[index:index + 300]
-
-        # #1000 ... 제목 timer 1s memory 4MB 형태에서 제목 추출
         m = re.search(rf"#{problem_id}.*?([가-힣A-Za-z0-9].*?)\s+timer\s+", segment)
+
         if m:
             title = normalize(m.group(1))
             title = re.sub(r"^(upload|done|how_to_reg|\d+|\s)+", "", title).strip()
+
             if title:
                 return title
 
@@ -106,8 +134,6 @@ def extract_title_from_html(html, problem_id):
 
 
 def extract_difficulty_from_html(html):
-    # 정올 난이도 아이콘 URL/속성에서 숫자 추출
-    # 예: /solved/5.svg, /difficulty/5.svg, level-5 등
     patterns = [
         r"/solved/([1-9]|[1-2]\d|30)\.svg",
         r"/level/([1-9]|[1-2]\d|30)\.svg",
@@ -123,23 +149,12 @@ def extract_difficulty_from_html(html):
             return m.group(1)
 
     soup = BeautifulSoup(html, "html.parser")
+    text = normalize(soup.get_text(" ", strip=True))
 
-    for tag in soup.find_all(True):
-        values = [
-            tag.get("alt", ""),
-            tag.get("title", ""),
-            tag.get("aria-label", ""),
-            tag.get("src", ""),
-            " ".join(tag.get("class", [])) if isinstance(tag.get("class"), list) else "",
-        ]
-
-        for value in values:
-            value = str(value)
-
-            for pattern in patterns:
-                m = re.search(pattern, value, re.I)
-                if m:
-                    return m.group(1)
+    # 문제 상단: #1000 ... 5 두 정수 더하기 ...
+    m = re.search(r"#\d+.*?(?<!\d)([1-9]|[1-2]\d|30)(?!\d)", text)
+    if m:
+        return m.group(1)
 
     return "Unrated"
 
@@ -165,8 +180,8 @@ def get_problem_info(problem_id):
     return INFO_CACHE[problem_id]
 
 
-def collect_problems():
-    problems = {}
+def collect_solution_files():
+    result = {}
 
     for file in Path(".").glob("*xxx/*/*"):
         if not file.is_file():
@@ -189,21 +204,13 @@ def collect_problems():
         if not re.fullmatch(r"\d+xxx", group_dir):
             continue
 
-        parsed = parse_problem_dir(problem_dir)
-        if parsed is None:
+        if not re.fullmatch(r"\d+", problem_dir):
             continue
 
-        problem_id, problem_id_text = parsed
+        problem_id = int(problem_dir)
+        result.setdefault(problem_id, []).append(file)
 
-        if problem_id not in problems:
-            problems[problem_id] = {
-                "id_text": problem_id_text,
-                "files": [],
-            }
-
-        problems[problem_id]["files"].append(file)
-
-    return problems
+    return result
 
 
 def make_solution_links(files):
@@ -227,27 +234,26 @@ def get_header():
     return "# JUNGOL Solutions\n\n"
 
 
-def get_table(problems):
+def get_table(problem_ids, solution_files):
     table = "| No. | Title | Difficulty | Solution |\n"
     table += "|:---|:---|:---:|:---:|\n"
 
-    for problem_id in tqdm(sorted(problems)):
-        problem = problems[problem_id]
+    for problem_id in tqdm(problem_ids):
         info = get_problem_info(problem_id)
 
-        no = problem["id_text"]
         title = escape_markdown(info["title"])
         difficulty = info["difficulty"]
         url = get_problem_url(problem_id)
-        solution = make_solution_links(problem["files"])
+        solution = make_solution_links(solution_files.get(problem_id, []))
 
-        table += f"| [{no}]({url}) | {title} | {difficulty} | {solution} |\n"
+        table += f"| [{problem_id}]({url}) | {title} | {difficulty} | {solution} |\n"
 
     return table
 
 
 if __name__ == "__main__":
-    problems = collect_problems()
+    solved_problem_ids = get_solved_problem_ids()
+    solution_files = collect_solution_files()
 
     with open("README.md", "w", encoding="utf-8") as f:
-        f.write(get_header() + get_table(problems))
+        f.write(get_header() + get_table(solved_problem_ids, solution_files))
