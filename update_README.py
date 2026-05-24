@@ -122,43 +122,56 @@ def get_solved_problem_ids():
 def extract_title_from_html(html, problem_id):
     soup = BeautifulSoup(html, "html.parser")
 
-    # 1순위: 브라우저 title 태그에서 가져오기
-    if soup.title and soup.title.string:
-        title = normalize(soup.title.string)
+    def clean_title(title):
+        title = normalize(title)
         title = re.sub(r"\s*-\s*JUNGOL\s*$", "", title).strip()
 
-        if title and title.lower() != "jungol":
-            return title
+        title = re.sub(
+            r"^(upload|done|how_to_reg|keep|bookmark|star|check|timer|memory|\d+|\s)+",
+            "",
+            title,
+            flags=re.I,
+        ).strip()
 
-    # 2순위: 본문 텍스트에서 가져오기
+        if title in ("", "문제", "Contest Title", "JUNGOL"):
+            return ""
+
+        return title
+
+    # 1순위: 본문 상단에서 추출
     text = normalize(soup.get_text(" ", strip=True))
-
     marker = f"#{problem_id}"
     index = text.find(marker)
 
     if index != -1:
-        segment = text[index:index + 500]
+        segment = text[index:index + 800]
 
-        # #1000 정답 5 keep 두 정수 더하기 (A+B) timer 1s memory 4MB
-        m = re.search(
-            rf"#{problem_id}\s*(?:정답)?\s*(?:[1-9]|[1-2]\d|30)?\s*(.*?)\s+(?:timer|시간|메모리|memory)\s+",
-            segment,
-            re.I,
-        )
+        patterns = [
+            # #1000 정답 5 두 정수 더하기 (A+B) timer 1s memory 4MB
+            rf"#{problem_id}\s*(?:정답)?\s*(?:[1-9]|[1-2]\d|30|\?)?\s*(.*?)\s+(?:timer|시간|메모리|memory)\s+",
 
-        if m:
-            title = normalize(m.group(1))
+            # #1000 정답 5 두 정수 더하기 (A+B) 1s 4MB
+            rf"#{problem_id}\s*(?:정답)?\s*(?:[1-9]|[1-2]\d|30|\?)?\s*(.*?)\s+\d+(?:ms|s)\s+\d+(?:KB|MB|GB)",
 
-            # Material Icon 텍스트 제거
-            title = re.sub(
-                r"^(upload|done|how_to_reg|keep|bookmark|star|check|timer|memory|\d+|\s)+",
-                "",
-                title,
-                flags=re.I,
-            ).strip()
+            # #1000 정답 5 두 정수 더하기 (A+B) 문제 입력 출력
+            rf"#{problem_id}\s*(?:정답)?\s*(?:[1-9]|[1-2]\d|30|\?)?\s*(.*?)\s+문제\s+",
+        ]
 
-            if title:
-                return title
+        for pattern in patterns:
+            m = re.search(pattern, segment, re.I)
+
+            if m:
+                title = clean_title(m.group(1))
+
+                if title:
+                    return title
+
+    # 2순위: title 태그
+    if soup.title and soup.title.string:
+        title = clean_title(soup.title.string)
+
+        if title:
+            return title
 
     return ""
     
