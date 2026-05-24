@@ -235,7 +235,7 @@ def get_problem_info(problem_id):
 def collect_solution_files():
     result = {}
 
-    for file in Path(".").glob("*xxx/*/*"):
+    for file in Path(".").glob("*xxx/*"):
         if not file.is_file():
             continue
 
@@ -247,19 +247,21 @@ def collect_solution_files():
         if extension not in EXT:
             continue
 
-        if len(file.parts) < 3:
+        if len(file.parts) < 2:
             continue
 
         group_dir = file.parts[0]
-        problem_dir = file.parts[1]
+        filename = file.name
 
         if not re.fullmatch(r"\d+xxx", group_dir):
             continue
 
-        if not re.fullmatch(r"\d+", problem_dir):
+        # 1000.cpp, 1001.py, 12260.java
+        m = re.match(r"^(\d+)\.[^.]+$", filename)
+        if not m:
             continue
 
-        problem_id = int(problem_dir)
+        problem_id = int(m.group(1))
         result.setdefault(problem_id, []).append(file)
 
     return result
