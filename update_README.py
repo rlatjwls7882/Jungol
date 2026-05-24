@@ -10,7 +10,7 @@ from tqdm import tqdm
 HANDLE = "rlatjwls3333"
 BASE_URL = "https://jungol.co.kr"
 
-DIFFICULTY_CACHE = {}
+INFO_CACHE = {}
 
 EXT = {
     ".ada": "Ada",
@@ -43,27 +43,6 @@ def normalize(text):
     return re.sub(r"\s+", " ", text).strip()
 
 
-def parse_problem_dir(dirname):
-    # 1000
-    # 1000.문제이름
-    # 1000. 문제이름
-    # 0001
-    m = re.match(r"^(\d+)(?:\.(.*))?$", dirname)
-    if not m:
-        return None
-
-    problem_id_text = m.group(1)
-    problem_id = int(problem_id_text)
-
-    title = m.group(2)
-    if title is None or title.strip() == "":
-        title = f"Problem {problem_id}"
-    else:
-        title = title.strip()
-
-    return problem_id, problem_id_text, title
-
-
 def make_markdown_path(path):
     return quote(path.as_posix(), safe="/._-")
 
@@ -83,44 +62,68 @@ def request_html(url):
     return response.text
 
 
-def extract_difficulty_from_text(text, problem_id, title):
-    text = normalize(text)
-    title = normalize(title)
+def parse_problem_dir(dirname):
+    # 1000
+    # 01000
+    # 1000.문제이름 형태도 일단 허용
+    m = re.match(r"^(\d+)(?:\..*)?$", dirname)
+    if not m:
+        return None
 
+    problem_id_text = m.group(1)
+    problem_id = int(problem_id_text)
+
+    return problem_id, problem_id_text
+
+
+def extract_title_from_html(html, problem_id):
+    soup = BeautifulSoup(html, "html.parser")
+
+    # 가장 안정적: <title>두 정수 더하기 (A+B) - JUNGOL</title>
+    if soup.title and soup.title.string:
+        title = normalize(soup.title.string)
+        title = re.sub(r"\s*-\s*JUNGOL\s*$", "", title)
+        if title:
+            return title
+
+    # fallback: 본문 텍스트에서 #번호 뒤쪽을 사용
+    text = normalize(soup.get_text(" ", strip=True))
     marker = f"#{problem_id}"
     index = text.find(marker)
 
-    if index == -1:
-        return None
+    if index != -1:
+        segment = text[index:index + 300]
 
-    segment = text[index:index + 250]
+        # #1000 ... 제목 timer 1s memory 4MB 형태에서 제목 추출
+        m = re.search(rf"#{problem_id}.*?([가-힣A-Za-z0-9].*?)\s+timer\s+", segment)
+        if m:
+            title = normalize(m.group(1))
+            title = re.sub(r"^(upload|done|how_to_reg|\d+|\s)+", "", title).strip()
+            if title:
+                return title
 
-    if title in segment:
-        before_title = segment[:segment.find(title)]
-    else:
-        before_title = segment
-
-    before_title = before_title.replace(marker, " ")
-    before_title = before_title.replace("정답", " ")
-
-    numbers = re.findall(r"(?<!\d)([1-9]|[1-2]\d|30)(?!\d)", before_title)
-
-    if numbers:
-        return numbers[-1]
-
-    return None
+    return f"Problem {problem_id}"
 
 
-def extract_difficulty_from_html(html, problem_id, title):
+def extract_difficulty_from_html(html):
+    # 정올 난이도 아이콘 URL/속성에서 숫자 추출
+    # 예: /solved/5.svg, /difficulty/5.svg, level-5 등
+    patterns = [
+        r"/solved/([1-9]|[1-2]\d|30)\.svg",
+        r"/level/([1-9]|[1-2]\d|30)\.svg",
+        r"/tier/([1-9]|[1-2]\d|30)\.svg",
+        r"/difficulty/([1-9]|[1-2]\d|30)\.svg",
+        r"(?:level|tier|difficulty|rank)[-_:/ ]([1-9]|[1-2]\d|30)",
+        r'"(?:level|tier|difficulty|rank)"\s*:\s*([1-9]|[1-2]\d|30)',
+    ]
+
+    for pattern in patterns:
+        m = re.search(pattern, html, re.I)
+        if m:
+            return m.group(1)
+
     soup = BeautifulSoup(html, "html.parser")
 
-    # 1순위: 화면에 렌더링된 텍스트 기준
-    text = soup.get_text(" ", strip=True)
-    difficulty = extract_difficulty_from_text(text, problem_id, title)
-    if difficulty:
-        return difficulty
-
-    # 2순위: img/svg/태그 속성 안의 난이도 숫자
     for tag in soup.find_all(True):
         values = [
             tag.get("alt", ""),
@@ -133,45 +136,33 @@ def extract_difficulty_from_html(html, problem_id, title):
         for value in values:
             value = str(value)
 
-            patterns = [
-                r"(?:level|tier|difficulty|rank)[/-]?(\d+)",
-                r"/(?:level|tier|difficulty|rank)/(\d+)",
-            ]
-
             for pattern in patterns:
                 m = re.search(pattern, value, re.I)
                 if m:
                     return m.group(1)
 
-    # 3순위: raw HTML 내부 JSON/스크립트 데이터
-    patterns = [
-        r'"(?:level|tier|difficulty|rank)"\s*:\s*(\d+)',
-        r"'(?:level|tier|difficulty|rank)'\s*:\s*(\d+)",
-        r"(?:level|tier|difficulty|rank)\D{0,20}([1-9]|[1-2]\d|30)",
-    ]
-
-    for pattern in patterns:
-        m = re.search(pattern, html, re.I)
-        if m:
-            return m.group(1)
-
     return "Unrated"
 
 
-def get_problem_difficulty(problem_id, title):
-    if problem_id in DIFFICULTY_CACHE:
-        return DIFFICULTY_CACHE[problem_id]
+def get_problem_info(problem_id):
+    if problem_id in INFO_CACHE:
+        return INFO_CACHE[problem_id]
 
     try:
         html = request_html(get_problem_url(problem_id))
-        difficulty = extract_difficulty_from_html(html, problem_id, title)
+        title = extract_title_from_html(html, problem_id)
+        difficulty = extract_difficulty_from_html(html)
     except Exception:
+        title = f"Problem {problem_id}"
         difficulty = "Unrated"
 
-    DIFFICULTY_CACHE[problem_id] = difficulty
-    time.sleep(0.2)
+    INFO_CACHE[problem_id] = {
+        "title": title,
+        "difficulty": difficulty,
+    }
 
-    return difficulty
+    time.sleep(0.2)
+    return INFO_CACHE[problem_id]
 
 
 def collect_problems():
@@ -202,12 +193,11 @@ def collect_problems():
         if parsed is None:
             continue
 
-        problem_id, problem_id_text, title = parsed
+        problem_id, problem_id_text = parsed
 
         if problem_id not in problems:
             problems[problem_id] = {
                 "id_text": problem_id_text,
-                "title": title,
                 "files": [],
             }
 
@@ -233,7 +223,7 @@ def make_solution_links(files):
     return " ".join(links)
 
 
-def get_header(handle):
+def get_header():
     return "# JUNGOL Solutions\n\n"
 
 
@@ -243,10 +233,11 @@ def get_table(problems):
 
     for problem_id in tqdm(sorted(problems)):
         problem = problems[problem_id]
+        info = get_problem_info(problem_id)
 
         no = problem["id_text"]
-        title = escape_markdown(problem["title"])
-        difficulty = get_problem_difficulty(problem_id, problem["title"])
+        title = escape_markdown(info["title"])
+        difficulty = info["difficulty"]
         url = get_problem_url(problem_id)
         solution = make_solution_links(problem["files"])
 
@@ -259,4 +250,4 @@ if __name__ == "__main__":
     problems = collect_problems()
 
     with open("README.md", "w", encoding="utf-8") as f:
-        f.write(get_header(HANDLE) + get_table(problems))
+        f.write(get_header() + get_table(problems))
