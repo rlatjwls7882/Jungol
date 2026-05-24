@@ -234,10 +234,7 @@ def make_solution_links(files):
 
 
 def get_header(handle):
-    header = "# JUNGOL Solutions\n\n"
-    header += f"### Handle: `{handle}`\n\n"
-    header += "정올 풀이 저장소에 업로드된 문제 목록입니다.\n\n"
-    return header
+    return "# JUNGOL Solutions\n\n"
 
 
 def get_table(problems):
