@@ -1,9 +1,16 @@
 import re
+import time
 from pathlib import Path
 from urllib.parse import quote
+
+from bs4 import BeautifulSoup
+from curl_cffi import requests
 from tqdm import tqdm
 
 HANDLE = "rlatjwls3333"
+BASE_URL = "https://jungol.co.kr"
+
+DIFFICULTY_CACHE = {}
 
 EXT = {
     ".ada": "Ada",
@@ -23,11 +30,18 @@ EXT = {
     ".rs": "Rust",
 }
 
+
 def get_problem_url(problem_id):
-    return f"https://jungol.co.kr/problem/{problem_id}"
+    return f"{BASE_URL}/problem/{problem_id}"
+
 
 def escape_markdown(text):
     return text.replace("|", "\\|").strip()
+
+
+def normalize(text):
+    return re.sub(r"\s+", " ", text).strip()
+
 
 def parse_problem_dir(dirname):
     # 1000
@@ -49,8 +63,116 @@ def parse_problem_dir(dirname):
 
     return problem_id, problem_id_text, title
 
+
 def make_markdown_path(path):
     return quote(path.as_posix(), safe="/._-")
+
+
+def request_html(url):
+    response = requests.get(
+        url,
+        impersonate="chrome",
+        timeout=20,
+        headers={
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
+            "Referer": BASE_URL + "/",
+        },
+    )
+    response.raise_for_status()
+    return response.text
+
+
+def extract_difficulty_from_text(text, problem_id, title):
+    text = normalize(text)
+    title = normalize(title)
+
+    marker = f"#{problem_id}"
+    index = text.find(marker)
+
+    if index == -1:
+        return None
+
+    segment = text[index:index + 250]
+
+    if title in segment:
+        before_title = segment[:segment.find(title)]
+    else:
+        before_title = segment
+
+    before_title = before_title.replace(marker, " ")
+    before_title = before_title.replace("정답", " ")
+
+    numbers = re.findall(r"(?<!\d)([1-9]|[1-2]\d|30)(?!\d)", before_title)
+
+    if numbers:
+        return numbers[-1]
+
+    return None
+
+
+def extract_difficulty_from_html(html, problem_id, title):
+    soup = BeautifulSoup(html, "html.parser")
+
+    # 1순위: 화면에 렌더링된 텍스트 기준
+    text = soup.get_text(" ", strip=True)
+    difficulty = extract_difficulty_from_text(text, problem_id, title)
+    if difficulty:
+        return difficulty
+
+    # 2순위: img/svg/태그 속성 안의 난이도 숫자
+    for tag in soup.find_all(True):
+        values = [
+            tag.get("alt", ""),
+            tag.get("title", ""),
+            tag.get("aria-label", ""),
+            tag.get("src", ""),
+            " ".join(tag.get("class", [])) if isinstance(tag.get("class"), list) else "",
+        ]
+
+        for value in values:
+            value = str(value)
+
+            patterns = [
+                r"(?:level|tier|difficulty|rank)[/-]?(\d+)",
+                r"/(?:level|tier|difficulty|rank)/(\d+)",
+            ]
+
+            for pattern in patterns:
+                m = re.search(pattern, value, re.I)
+                if m:
+                    return m.group(1)
+
+    # 3순위: raw HTML 내부 JSON/스크립트 데이터
+    patterns = [
+        r'"(?:level|tier|difficulty|rank)"\s*:\s*(\d+)',
+        r"'(?:level|tier|difficulty|rank)'\s*:\s*(\d+)",
+        r"(?:level|tier|difficulty|rank)\D{0,20}([1-9]|[1-2]\d|30)",
+    ]
+
+    for pattern in patterns:
+        m = re.search(pattern, html, re.I)
+        if m:
+            return m.group(1)
+
+    return "Unrated"
+
+
+def get_problem_difficulty(problem_id, title):
+    if problem_id in DIFFICULTY_CACHE:
+        return DIFFICULTY_CACHE[problem_id]
+
+    try:
+        html = request_html(get_problem_url(problem_id))
+        difficulty = extract_difficulty_from_html(html, problem_id, title)
+    except Exception:
+        difficulty = "Unrated"
+
+    DIFFICULTY_CACHE[problem_id] = difficulty
+    time.sleep(0.2)
+
+    return difficulty
+
 
 def collect_problems():
     problems = {}
@@ -93,6 +215,7 @@ def collect_problems():
 
     return problems
 
+
 def make_solution_links(files):
     links = []
 
@@ -109,27 +232,31 @@ def make_solution_links(files):
 
     return " ".join(links)
 
+
 def get_header(handle):
     header = "# JUNGOL Solutions\n\n"
     header += f"### Handle: `{handle}`\n\n"
     header += "정올 풀이 저장소에 업로드된 문제 목록입니다.\n\n"
     return header
 
+
 def get_table(problems):
-    table = "| No. | Title | Solution |\n"
-    table += "|:---|:---|:---:|\n"
+    table = "| No. | Title | Difficulty | Solution |\n"
+    table += "|:---|:---|:---:|:---:|\n"
 
     for problem_id in tqdm(sorted(problems)):
         problem = problems[problem_id]
 
         no = problem["id_text"]
         title = escape_markdown(problem["title"])
+        difficulty = get_problem_difficulty(problem_id, problem["title"])
         url = get_problem_url(problem_id)
         solution = make_solution_links(problem["files"])
 
-        table += f"| [{no}]({url}) | {title} | {solution} |\n"
+        table += f"| [{no}]({url}) | {title} | {difficulty} | {solution} |\n"
 
     return table
+
 
 if __name__ == "__main__":
     problems = collect_problems()
