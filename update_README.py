@@ -78,7 +78,7 @@ def get_solution_path(problem_id):
 
     directory = f"{str(id_for_dir)[:2]}xxx"
 
-    files = glob.glob(f"{directory}/{problem_id}.*/*")
+    files = glob.glob(f"{directory}/{problem_id}/*")
     files.sort()
 
     solution = ""
