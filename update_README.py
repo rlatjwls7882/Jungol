@@ -126,35 +126,42 @@ def extract_title_from_html(html, problem_id):
         title = normalize(title)
         title = re.sub(r"\s*-\s*JUNGOL\s*$", "", title).strip()
 
+        # 뒤쪽 메타데이터 제거
+        title = re.sub(r"\s+(?:timer|시간)\s+\S+.*$", "", title, flags=re.I).strip()
+        title = re.sub(r"\s+(?:memory|메모리)\s+\S+.*$", "", title, flags=re.I).strip()
+
+        # 앞쪽 Material Icon / UI 텍스트 제거
         title = re.sub(
-            r"^(upload|done|how_to_reg|keep|bookmark|star|check|timer|memory|\d+|\s)+",
+            r"^(upload|done|how_to_reg|keep|bookmark|star|check|timer|memory|call_split|code|language|translate|help|info|\d+|\?|\s)+",
             "",
             title,
             flags=re.I,
         ).strip()
+
+        # 정올 SSR 기본 placeholder 제거
+        title = re.sub(r"^Contest Title\s*", "", title, flags=re.I).strip()
 
         if title in ("", "문제", "Contest Title", "JUNGOL"):
             return ""
 
         return title
 
-    # 1순위: 본문 상단에서 추출
     text = normalize(soup.get_text(" ", strip=True))
     marker = f"#{problem_id}"
     index = text.find(marker)
 
     if index != -1:
-        segment = text[index:index + 800]
+        segment = text[index:index + 1000]
 
         patterns = [
             # #1000 정답 5 두 정수 더하기 (A+B) timer 1s memory 4MB
-            rf"#{problem_id}\s*(?:정답)?\s*(?:[1-9]|[1-2]\d|30|\?)?\s*(.*?)\s+(?:timer|시간|메모리|memory)\s+",
-
-            # #1000 정답 5 두 정수 더하기 (A+B) 1s 4MB
-            rf"#{problem_id}\s*(?:정답)?\s*(?:[1-9]|[1-2]\d|30|\?)?\s*(.*?)\s+\d+(?:ms|s)\s+\d+(?:KB|MB|GB)",
+            rf"#{problem_id}\s*(?:정답)?\s*(?:[1-9]|[1-2]\d|30|\?)?\s*(.*?)\s+(?:timer|시간|memory|메모리)\s+",
 
             # #1000 정답 5 두 정수 더하기 (A+B) 문제 입력 출력
             rf"#{problem_id}\s*(?:정답)?\s*(?:[1-9]|[1-2]\d|30|\?)?\s*(.*?)\s+문제\s+",
+
+            # fallback
+            rf"#{problem_id}\s*(?:정답)?\s*(?:[1-9]|[1-2]\d|30|\?)?\s*(.*)",
         ]
 
         for pattern in patterns:
@@ -166,7 +173,6 @@ def extract_title_from_html(html, problem_id):
                 if title:
                     return title
 
-    # 2순위: title 태그
     if soup.title and soup.title.string:
         title = clean_title(soup.title.string)
 
