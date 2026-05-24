@@ -1,101 +1,198 @@
 import glob
-import re
 import time
 from tqdm import tqdm
-from bs4 import BeautifulSoup
 from curl_cffi import requests
 
 HANDLE = "rlatjwls3333"
-BASE_URL = "https://jungol.co.kr"
+API_BASE_URL = "https://api.jungol.co.kr"
+WEB_BASE_URL = "https://jungol.co.kr"
 
-def request_html(path, params=None):
-    url = BASE_URL + path
+PAGE_LIMIT = 20
+TITLE_CACHE = {}
+
+def request_json(path, params=None):
+    url = API_BASE_URL + path
     response = requests.get(
         url,
         params=params or {},
         impersonate="chrome",
         timeout=20,
         headers={
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept": "application/json",
             "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
             "Referer": "https://jungol.co.kr/",
+            "Origin": "https://jungol.co.kr",
         },
     )
     response.raise_for_status()
-    return response.text
 
-def normalize(text):
-    return re.sub(r"\s+", " ", text).strip()
+    try:
+        return response.json()
+    except Exception:
+        raise RuntimeError(f"JSON 응답이 아닙니다: {response.text[:300]}")
 
-def parse_submission_page(html):
-    soup = BeautifulSoup(html, "html.parser")
-    result = []
+def unwrap_submission_response(payload):
+    """
+    예상 형태:
+    {
+        "data": {
+            "data": [...],
+            "cursor": "..."
+        }
+    }
+    """
+    root = payload.get("data", payload) if isinstance(payload, dict) else payload
 
-    # 문제 링크 주변 블록에서 제출자, 결과를 같이 확인
-    for a in soup.find_all("a", href=re.compile(r"/problem/\d+")):
-        href = a.get("href", "")
-        m = re.search(r"/problem/(\d+)", href)
-        if not m:
-            continue
+    if isinstance(root, list):
+        return root, None
 
-        problem_id = int(m.group(1))
-        title = normalize(a.get_text(" ", strip=True))
-        title = re.sub(r"\s*#\d+\s*$", "", title).strip()
+    if not isinstance(root, dict):
+        return [], None
 
-        block = a
-        text = ""
-        for _ in range(8):
-            if block.parent is None:
-                break
-            block = block.parent
-            text = normalize(block.get_text(" ", strip=True))
+    items = []
+    for key in ("data", "items", "submissions", "results"):
+        if isinstance(root.get(key), list):
+            items = root[key]
+            break
 
-            if HANDLE in text and ("정답" in text or "Accepted" in text):
-                break
+    cursor = (
+        root.get("cursor")
+        or root.get("nextCursor")
+        or root.get("next_cursor")
+        or root.get("next")
+    )
 
-        if HANDLE not in text:
-            continue
-        if "정답" not in text and "Accepted" not in text:
-            continue
+    return items, cursor
 
-        result.append((problem_id, title))
+def extract_problem_id(submission):
+    for key in ("problemId", "problem_id", "pid"):
+        if key in submission and submission[key] is not None:
+            return int(submission[key])
 
-    return result
+    problem = submission.get("problem")
+    if isinstance(problem, dict):
+        for key in ("problemId", "id", "problem_id"):
+            if key in problem and problem[key] is not None:
+                return int(problem[key])
+
+    return None
+
+def is_accepted(submission):
+    values = [
+        submission.get("m_reason"),
+        submission.get("reason"),
+        submission.get("result"),
+        submission.get("status"),
+    ]
+
+    for value in values:
+        text = str(value).upper()
+        if text in ("AC", "ACCEPTED"):
+            return True
+        if "정답" in str(value):
+            return True
+
+    # 정올은 점수형 문제도 있을 수 있으므로 보조 조건으로 둠
+    try:
+        if int(submission.get("m_score", 0)) == 100:
+            return True
+    except Exception:
+        pass
+
+    return False
+
+def find_title(obj):
+    if isinstance(obj, dict):
+        for key in ("titleKo", "title_ko", "title", "name"):
+            value = obj.get(key)
+
+            if isinstance(value, str) and value.strip():
+                return value.strip()
+
+            if isinstance(value, dict):
+                for lang_key in ("ko", "kr", "ko_KR", "ko-KR"):
+                    text = value.get(lang_key)
+                    if isinstance(text, str) and text.strip():
+                        return text.strip()
+
+        for value in obj.values():
+            title = find_title(value)
+            if title:
+                return title
+
+    if isinstance(obj, list):
+        for value in obj:
+            title = find_title(value)
+            if title:
+                return title
+
+    return None
+
+def fetch_problem_title(problem_id):
+    if problem_id in TITLE_CACHE:
+        return TITLE_CACHE[problem_id]
+
+    try:
+        payload = request_json(f"/problem/{problem_id}")
+        title = find_title(payload)
+    except Exception:
+        title = None
+
+    if not title:
+        title = f"Problem {problem_id}"
+
+    TITLE_CACHE[problem_id] = title
+    time.sleep(0.15)
+    return title
 
 def get_solved_problems(max_pages=1000):
     problems = {}
-    empty_streak = 0
+    cursor = None
+    seen_cursors = set()
 
-    for page in tqdm(range(1, max_pages + 1)):
-        html = request_html("/submission", params={
+    for _ in tqdm(range(max_pages)):
+        params = {
             "account": HANDLE,
-            "page": page,
-        })
+            "limit": PAGE_LIMIT,
+        }
 
-        items = parse_submission_page(html)
+        if cursor:
+            params["cursor"] = cursor
 
-        new_count = 0
-        for problem_id, title in items:
-            if problem_id not in problems:
-                problems[problem_id] = title
-                new_count += 1
+        payload = request_json("/submission", params=params)
+        submissions, next_cursor = unwrap_submission_response(payload)
 
-        if len(items) == 0:
-            empty_streak += 1
-        else:
-            empty_streak = 0
-
-        if empty_streak >= 3:
+        if not submissions:
             break
 
-        time.sleep(0.4)
+        for submission in submissions:
+            if not is_accepted(submission):
+                continue
+
+            problem_id = extract_problem_id(submission)
+            if problem_id is None:
+                continue
+
+            if problem_id not in problems:
+                problems[problem_id] = fetch_problem_title(problem_id)
+
+        if not next_cursor:
+            break
+
+        if next_cursor in seen_cursors:
+            break
+
+        seen_cursors.add(next_cursor)
+        cursor = next_cursor
+
+        time.sleep(0.3)
 
     return sorted(problems.items())
 
 def get_problem_url(problem_id):
     return f"https://jungol.co.kr/problem/{problem_id}"
 
-def get_problem_title(title):
+def escape_problem_title(title):
     title = title.replace("|", "\\|")
     return title
 
@@ -154,7 +251,7 @@ def get_table(problems):
 
     for problem_id, title in tqdm(problems):
         url = get_problem_url(problem_id)
-        title = get_problem_title(title)
+        title = escape_problem_title(title)
         path = get_solution_path(problem_id)
 
         table += f"| [{problem_id}]({url}) | {title} | {path} |\n"
@@ -163,6 +260,12 @@ def get_table(problems):
 
 if __name__ == "__main__":
     problems = get_solved_problems()
+
+    if not problems:
+        raise RuntimeError(
+            "정답 문제를 하나도 가져오지 못했습니다. "
+            "api.jungol.co.kr/submission 응답 구조 또는 account 파라미터를 확인해야 합니다."
+        )
 
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(get_header(HANDLE) + get_table(problems))
