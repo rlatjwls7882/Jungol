@@ -118,6 +118,16 @@ def get_solved_problem_ids():
 
 def extract_title_from_html(html, problem_id):
     soup = BeautifulSoup(html, "html.parser")
+
+    # 1순위: 브라우저 title 태그에서 가져오기
+    if soup.title and soup.title.string:
+        title = normalize(soup.title.string)
+        title = re.sub(r"\s*-\s*JUNGOL\s*$", "", title).strip()
+
+        if title and title.lower() != "jungol":
+            return title
+
+    # 2순위: 본문 텍스트에서 가져오기
     text = normalize(soup.get_text(" ", strip=True))
 
     marker = f"#{problem_id}"
@@ -126,7 +136,7 @@ def extract_title_from_html(html, problem_id):
     if index != -1:
         segment = text[index:index + 500]
 
-        # #1000 정답 5 두 정수 더하기 (A+B) timer 1s memory 4MB
+        # #1000 정답 5 keep 두 정수 더하기 (A+B) timer 1s memory 4MB
         m = re.search(
             rf"#{problem_id}\s*(?:정답)?\s*(?:[1-9]|[1-2]\d|30)?\s*(.*?)\s+(?:timer|시간|메모리|memory)\s+",
             segment,
@@ -135,20 +145,20 @@ def extract_title_from_html(html, problem_id):
 
         if m:
             title = normalize(m.group(1))
-            title = re.sub(r"^(upload|done|how_to_reg|\d+|\s)+", "", title).strip()
+
+            # Material Icon 텍스트 제거
+            title = re.sub(
+                r"^(upload|done|how_to_reg|keep|bookmark|star|check|timer|memory|\d+|\s)+",
+                "",
+                title,
+                flags=re.I,
+            ).strip()
 
             if title:
                 return title
 
-    if soup.title and soup.title.string:
-        title = normalize(soup.title.string)
-        title = re.sub(r"\s*-\s*JUNGOL\s*$", "", title).strip()
-
-        if title and title.lower() != "jungol":
-            return title
-
     return ""
-
+    
 
 def extract_difficulty_from_html(html, problem_id, title):
     soup = BeautifulSoup(html, "html.parser")
