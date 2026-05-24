@@ -125,25 +125,23 @@ def extract_title_from_html(html, problem_id):
     def clean_title(title):
         title = normalize(title)
         title = re.sub(r"\s*-\s*JUNGOL\s*$", "", title).strip()
-
+    
         # 뒤쪽 메타데이터 제거
         title = re.sub(r"\s+(?:timer|시간)\s+\S+.*$", "", title, flags=re.I).strip()
         title = re.sub(r"\s+(?:memory|메모리)\s+\S+.*$", "", title, flags=re.I).strip()
-
+    
         # 앞쪽 Material Icon / UI 텍스트 제거
         title = re.sub(
-            r"^(upload|done|how_to_reg|keep|bookmark|star|check|timer|memory|call_split|code|language|translate|help|info|\d+|\?|\s)+",
+            r"^(upload|done|how_to_reg|keep|bookmark|star|check|call_split|code|language|translate|help|info|\d+|\?|\s)+",
             "",
             title,
             flags=re.I,
         ).strip()
-
-        # 정올 SSR 기본 placeholder 제거
-        title = re.sub(r"^Contest Title\s*", "", title, flags=re.I).strip()
-
-        if title in ("", "문제", "Contest Title", "JUNGOL"):
+    
+        # 실제 제목이 아닌 기본 텍스트만 제거
+        if title in ("", "문제", "JUNGOL"):
             return ""
-
+    
         return title
 
     text = normalize(soup.get_text(" ", strip=True))
