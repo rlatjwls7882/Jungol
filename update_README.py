@@ -31,10 +31,9 @@ EXT = {
     ".rs": "Rust",
 }
 
-# 문제 난이도를 입력받아 문제 티어를 반환
 def get_problem_tier(level):
     tier = {
-        0: "Unrated",
+        0: "",
         1: "Bronze 5", 2: "Bronze 4", 3: "Bronze 3", 4: "Bronze 2", 5: "Bronze 1",
         6: "Silver 5", 7: "Silver 4", 8: "Silver 3", 9: "Silver 2", 10: "Silver 1",
         11: "Gold 5", 12: "Gold 4", 13: "Gold 3", 14: "Gold 2", 15: "Gold 1",
@@ -42,7 +41,13 @@ def get_problem_tier(level):
         21: "Diamond 5", 22: "Diamond 4", 23: "Diamond 3", 24: "Diamond 2", 25: "Diamond 1",
         26: "Ruby 5", 27: "Ruby 4", 28: "Ruby 3", 29: "Ruby 2", 30: "Ruby 1"
     }
-    return tier[level]
+
+    try:
+        level = int(level)
+    except Exception:
+        return ""
+
+    return tier.get(level, "")
 
 def request_html(url):
     response = requests.get(
