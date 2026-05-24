@@ -33,6 +33,7 @@ EXT = {
 
 def get_problem_tier(level):
     tier = {
+        0: "Unrated",
         1: "Bronze 5", 2: "Bronze 4", 3: "Bronze 3", 4: "Bronze 2", 5: "Bronze 1",
         6: "Silver 5", 7: "Silver 4", 8: "Silver 3", 9: "Silver 2", 10: "Silver 1",
         11: "Gold 5", 12: "Gold 4", 13: "Gold 3", 14: "Gold 2", 15: "Gold 1",
@@ -44,10 +45,10 @@ def get_problem_tier(level):
     try:
         level = int(level)
     except Exception:
-        return ""
+        level = int(0)
 
     if level not in tier:
-        return ""
+        level = int(0)
 
     return f'<img alt="{tier[level]}" src="assets/{level}.svg" height="24">'
 
