@@ -13,3 +13,4 @@
 | [09278](https://jungol.co.kr/problem/9278) | 언어 제한 반복제어문1 - 자가진단 6-3 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [Python](./09xxx/9278.py) |
 | [12260](https://jungol.co.kr/problem/12260) | Contest Title | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./12xxx/12260.cpp) |
 | [12338](https://jungol.co.kr/problem/12338) | 구구단 1 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./12xxx/12338.cpp) |
+| [12422](https://jungol.co.kr/problem/12422) | 구구단 2 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./12xxx/12422.cpp) |
