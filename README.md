@@ -3,11 +3,15 @@
 | No. | Title | Difficulty | Solution |
 |:---|:---|:---:|:---:|
 | [01000](https://jungol.co.kr/problem/1000) | 두 정수 더하기 (A+B) | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./01xxx/1000.cpp) |
+| [01001](https://jungol.co.kr/problem/1001) | 강아지와 병아리 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./01xxx/1001.cpp) |
+| [01002](https://jungol.co.kr/problem/1002) | 최대공약수, 최소공배수 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./01xxx/1002.cpp) |
 | [01291](https://jungol.co.kr/problem/1291) | 구구단 4 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./01xxx/1291.cpp) |
 | [01341](https://jungol.co.kr/problem/1341) | 구구단 3 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./01xxx/1341.cpp) |
+| [01514](https://jungol.co.kr/problem/1514) | 타일 채우기 | <img alt="Silver 5" src="assets/6.svg" height="24"> | [C++](./01xxx/1514.cpp) |
 | [01692](https://jungol.co.kr/problem/1692) | 곱셈 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./01xxx/1692.cpp) |
 | [02107](https://jungol.co.kr/problem/2107) | 축구 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2107.cpp) |
 | [02117](https://jungol.co.kr/problem/2117) | 야바위 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2117.cpp) |
+| [02440](https://jungol.co.kr/problem/2440) | 설탕 배달(secer) | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./02xxx/2440.cpp) |
 | [04993](https://jungol.co.kr/problem/4993) | 일진법 | <img alt="Ruby 3" src="assets/28.svg" height="24"> | [C++](./04xxx/4993.cpp) |
 | [05647](https://jungol.co.kr/problem/5647) | 서브태스크 크림빵 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./05xxx/5647.cpp) |
 | [07021](https://jungol.co.kr/problem/7021) | 서브태스크 등교 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./07xxx/7021.cpp) |
