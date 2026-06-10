@@ -18,16 +18,19 @@
 | [02117](https://jungol.co.kr/problem/2117) | 야바위 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2117.cpp) |
 | [02440](https://jungol.co.kr/problem/2440) | 설탕 배달(secer) | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./02xxx/2440.cpp) |
 | [02736](https://jungol.co.kr/problem/2736) | 버블정렬(중) | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2736.cpp) |
+| [03334](https://jungol.co.kr/problem/3334) | 회문 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./03xxx/3334.cpp) |
 | [04053](https://jungol.co.kr/problem/4053) | MooTube | <img alt="Silver 4" src="assets/7.svg" height="24"> | [C++](./04xxx/4053.cpp) |
 | [04225](https://jungol.co.kr/problem/4225) | auto_awesome 스페셜 저지 ax+by=1 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./04xxx/4225.cpp) |
 | [04993](https://jungol.co.kr/problem/4993) | 일진법 | <img alt="Ruby 3" src="assets/28.svg" height="24"> | [C++](./04xxx/4993.cpp) |
 | [05043](https://jungol.co.kr/problem/5043) | 서브태스크 자습 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./05xxx/5043.cpp) |
 | [05377](https://jungol.co.kr/problem/5377) | 소는 풀을 좋아해 | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./05xxx/5377.cpp) |
 | [05461](https://jungol.co.kr/problem/5461) | 숫자구슬(medium) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5461.cpp) |
+| [05513](https://jungol.co.kr/problem/5513) | 극장 좌석 배치 2 | <img alt="Diamond 3" src="assets/23.svg" height="24"> | [C++](./05xxx/5513.cpp) |
 | [05628](https://jungol.co.kr/problem/5628) | 서브태스크 반딧불이 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5628.cpp) |
 | [05647](https://jungol.co.kr/problem/5647) | 서브태스크 크림빵 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./05xxx/5647.cpp) |
 | [05930](https://jungol.co.kr/problem/5930) | 슬픔을 나누면 2 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5930.cpp) |
 | [05937](https://jungol.co.kr/problem/5937) | 서브태스크 두 상단 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./05xxx/5937.cpp) |
+| [06326](https://jungol.co.kr/problem/6326) | 서브태스크 백열등 2 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./06xxx/6326.cpp) |
 | [07021](https://jungol.co.kr/problem/7021) | 서브태스크 등교 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./07xxx/7021.cpp) |
 | [07984](https://jungol.co.kr/problem/7984) | 서브태스크 점대칭도형 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./07xxx/7984.cpp) |
 | [08111](https://jungol.co.kr/problem/8111) | 서브태스크 헤어스타일이 비슷한 고슴도치 | <img alt="Ruby 1" src="assets/30.svg" height="24"> | [C++](./08xxx/8111.cpp) |
