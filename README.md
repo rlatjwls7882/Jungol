@@ -18,7 +18,7 @@
 | [01897](https://jungol.co.kr/problem/1897) | 자리배치0 | <img alt="Diamond 2" src="assets/24.svg" height="24"> | [C++](./01xxx/1897.cpp) |
 | [02107](https://jungol.co.kr/problem/2107) | 축구 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2107.cpp) |
 | [02117](https://jungol.co.kr/problem/2117) | 야바위 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2117.cpp) |
-| [02358](https://jungol.co.kr/problem/2358) | 트리의 중앙 | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./02xxx/2358.cpp) |
+| [02358](https://jungol.co.kr/problem/2358) | 트리의 중앙 | <img alt="Silver 2" src="assets/9.svg" height="24"> | [C++](./02xxx/2358.cpp) |
 | [02440](https://jungol.co.kr/problem/2440) | 설탕 배달(secer) | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./02xxx/2440.cpp) |
 | [02736](https://jungol.co.kr/problem/2736) | 버블정렬(중) | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2736.cpp) |
 | [03334](https://jungol.co.kr/problem/3334) | 회문 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./03xxx/3334.cpp) |
@@ -43,6 +43,7 @@
 | [08445](https://jungol.co.kr/problem/8445) | auto_awesome 스페셜 저지 call_split 서브태스크 C) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./08xxx/8445.cpp) |
 | [08551](https://jungol.co.kr/problem/8551) | Tutorial : STL Sort 1 ( 기본 사용법 ) | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./08xxx/8551.cpp) |
 | [08576](https://jungol.co.kr/problem/8576) | Tutorial : 구조체 연산자 오버로딩 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./08xxx/8576.cpp) |
+| [08987](https://jungol.co.kr/problem/8987) | 서브태스크 부분 문자열 만들기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8987.cpp) |
 | [09001](https://jungol.co.kr/problem/9001) | 언어 제한 emergency_home 출력 - 연습문제1 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9001.cpp) |
 | [09278](https://jungol.co.kr/problem/9278) | 언어 제한 emergency_home 반복제어문1 - 자가진단 6-3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [Python](./09xxx/9278.py) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./10xxx/10454.cpp) |
