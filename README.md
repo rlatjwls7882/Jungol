@@ -46,9 +46,9 @@
 | [08576](https://jungol.co.kr/problem/8576) | Tutorial : 구조체 연산자 오버로딩 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./08xxx/8576.cpp) |
 | [08987](https://jungol.co.kr/problem/8987) | 서브태스크 부분 문자열 만들기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8987.cpp) |
 | [09001](https://jungol.co.kr/problem/9001) | 언어 제한 emergency_home 출력 - 연습문제1 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9001.cpp) |
-| [09278](https://jungol.co.kr/problem/9278) | 언어 제한 emergency_home 반복제어문1 - 자가진단 6-3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [Python](./09xxx/9278.py) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./10xxx/10454.cpp) |
 | [12012](https://jungol.co.kr/problem/12012) |  | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./12xxx/12012.cpp) |
 | [12260](https://jungol.co.kr/problem/12260) | Contest Title | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./12xxx/12260.cpp) |
 | [12338](https://jungol.co.kr/problem/12338) | 구구단 1 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./12xxx/12338.cpp) |
 | [12422](https://jungol.co.kr/problem/12422) | 구구단 2 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./12xxx/12422.cpp) |
+| [12429](https://jungol.co.kr/problem/12429) | component_exchange 인터랙티브 SC ON 찾기 | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./12xxx/12429.cpp) |
