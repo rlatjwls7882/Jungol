@@ -7,7 +7,7 @@
 | [01002](https://jungol.co.kr/problem/1002) | 최대공약수, 최소공배수 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./01xxx/1002.cpp) |
 | [01054](https://jungol.co.kr/problem/1054) | 제곱근 | <img alt="Diamond 5" src="assets/21.svg" height="24"> | [C++](./01xxx/1054.cpp) |
 | [01060](https://jungol.co.kr/problem/1060) | 최소비용신장트리 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1060.cpp) |
-| [01182](https://jungol.co.kr/problem/1182) | 벽타기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./01xxx/1182.cpp) |
+| [01182](https://jungol.co.kr/problem/1182) | 벽타기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1182.cpp) |
 | [01291](https://jungol.co.kr/problem/1291) | 구구단 4 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./01xxx/1291.cpp) |
 | [01341](https://jungol.co.kr/problem/1341) | 구구단 3 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./01xxx/1341.cpp) |
 | [01350](https://jungol.co.kr/problem/1350) | 최대신장트리 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1350.cpp) |
@@ -36,6 +36,7 @@
 | [07021](https://jungol.co.kr/problem/7021) | 서브태스크 등교 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./07xxx/7021.cpp) |
 | [07984](https://jungol.co.kr/problem/7984) | 서브태스크 점대칭도형 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./07xxx/7984.cpp) |
 | [08111](https://jungol.co.kr/problem/8111) | 서브태스크 헤어스타일이 비슷한 고슴도치 | <img alt="Ruby 1" src="assets/30.svg" height="24"> | [C++](./08xxx/8111.cpp) |
+| [08148](https://jungol.co.kr/problem/8148) | 서브태스크 약속 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8148.cpp) |
 | [08445](https://jungol.co.kr/problem/8445) | auto_awesome 스페셜 저지 call_split 서브태스크 C) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./08xxx/8445.cpp) |
 | [08551](https://jungol.co.kr/problem/8551) | Tutorial : STL Sort 1 ( 기본 사용법 ) | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./08xxx/8551.cpp) |
 | [08576](https://jungol.co.kr/problem/8576) | Tutorial : 구조체 연산자 오버로딩 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./08xxx/8576.cpp) |
