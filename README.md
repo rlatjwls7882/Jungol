@@ -12,7 +12,6 @@
 | [01341](https://jungol.co.kr/problem/1341) | 구구단 3 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./01xxx/1341.cpp) |
 | [01350](https://jungol.co.kr/problem/1350) | 최대신장트리 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1350.cpp) |
 | [01514](https://jungol.co.kr/problem/1514) | 타일 채우기 | <img alt="Silver 5" src="assets/6.svg" height="24"> | [C++](./01xxx/1514.cpp) |
-| [01692](https://jungol.co.kr/problem/1692) | 곱셈 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./01xxx/1692.cpp) |
 | [01840](https://jungol.co.kr/problem/1840) | 치즈 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1840.cpp) |
 | [01871](https://jungol.co.kr/problem/1871) | 줄세우기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1871.cpp) |
 | [01897](https://jungol.co.kr/problem/1897) | 자리배치0 | <img alt="Diamond 2" src="assets/24.svg" height="24"> | [C++](./01xxx/1897.cpp) |
@@ -30,6 +29,7 @@
 | [05377](https://jungol.co.kr/problem/5377) | 소는 풀을 좋아해 | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./05xxx/5377.cpp) |
 | [05461](https://jungol.co.kr/problem/5461) | 숫자구슬(medium) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5461.cpp) |
 | [05513](https://jungol.co.kr/problem/5513) | 극장 좌석 배치 2 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5513.cpp) |
+| [05539](https://jungol.co.kr/problem/5539) | 서브태스크 연구원과 실험 장비 (주식회사) | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./05xxx/5539.cpp) |
 | [05607](https://jungol.co.kr/problem/5607) | 서브태스크 피자먹고 기분 피자 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5607.cpp) |
 | [05628](https://jungol.co.kr/problem/5628) | 서브태스크 반딧불이 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5628.cpp) |
 | [05647](https://jungol.co.kr/problem/5647) | 서브태스크 크림빵 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./05xxx/5647.cpp) |
