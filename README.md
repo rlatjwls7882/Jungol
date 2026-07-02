@@ -2,7 +2,6 @@
 
 | No. | Title | Difficulty | Solution |
 |:---|:---|:---:|:---:|
-| [01000](https://jungol.co.kr/problem/1000) | 두 정수 더하기 (A+B) | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./01xxx/1000.cpp) |
 | [01001](https://jungol.co.kr/problem/1001) | 강아지와 병아리 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./01xxx/1001.cpp) |
 | [01002](https://jungol.co.kr/problem/1002) | 최대공약수, 최소공배수 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./01xxx/1002.cpp) |
 | [01054](https://jungol.co.kr/problem/1054) | 제곱근 | <img alt="Diamond 5" src="assets/21.svg" height="24"> | [C++](./01xxx/1054.cpp) |
@@ -52,3 +51,4 @@
 | [12338](https://jungol.co.kr/problem/12338) | 구구단 1 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./12xxx/12338.cpp) |
 | [12422](https://jungol.co.kr/problem/12422) | 구구단 2 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./12xxx/12422.cpp) |
 | [12429](https://jungol.co.kr/problem/12429) | component_exchange 인터랙티브 SC ON 찾기 | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./12xxx/12429.cpp) |
+| [19527](https://jungol.co.kr/problem/19527) | auto_awesome 스페셜 저지 피보나치 빈도 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./19xxx/19527.cpp) |
