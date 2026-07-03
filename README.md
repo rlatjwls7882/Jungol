@@ -42,6 +42,7 @@
 | [08111](https://jungol.co.kr/problem/8111) | 서브태스크 헤어스타일이 비슷한 고슴도치 | <img alt="Ruby 1" src="assets/30.svg" height="24"> | [C++](./08xxx/8111.cpp) |
 | [08148](https://jungol.co.kr/problem/8148) | 서브태스크 약속 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8148.cpp) |
 | [08445](https://jungol.co.kr/problem/8445) | auto_awesome 스페셜 저지 call_split 서브태스크 C) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./08xxx/8445.cpp) |
+| [08668](https://jungol.co.kr/problem/8668) | 두루마리 휴지 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./08xxx/8668.cpp) |
 | [08840](https://jungol.co.kr/problem/8840) | 서브태스크 칩 교환 | <img alt="Platinum 3" src="assets/18.svg" height="24"> | [C++](./08xxx/8840.cpp) |
 | [08987](https://jungol.co.kr/problem/8987) | 서브태스크 부분 문자열 만들기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8987.cpp) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./10xxx/10454.cpp) |
@@ -49,6 +50,5 @@
 | [12012](https://jungol.co.kr/problem/12012) |  | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./12xxx/12012.cpp) |
 | [12260](https://jungol.co.kr/problem/12260) | Contest Title | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./12xxx/12260.cpp) |
 | [12338](https://jungol.co.kr/problem/12338) | 구구단 1 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./12xxx/12338.cpp) |
-| [12422](https://jungol.co.kr/problem/12422) | 구구단 2 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./12xxx/12422.cpp) |
 | [12429](https://jungol.co.kr/problem/12429) | component_exchange 인터랙티브 SC ON 찾기 | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./12xxx/12429.cpp) |
 | [19527](https://jungol.co.kr/problem/19527) | auto_awesome 스페셜 저지 피보나치 빈도 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./19xxx/19527.cpp) |
