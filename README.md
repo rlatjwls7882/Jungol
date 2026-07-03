@@ -6,6 +6,7 @@
 | [01002](https://jungol.co.kr/problem/1002) | 최대공약수, 최소공배수 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./01xxx/1002.cpp) |
 | [01054](https://jungol.co.kr/problem/1054) | 제곱근 | <img alt="Diamond 5" src="assets/21.svg" height="24"> | [C++](./01xxx/1054.cpp) |
 | [01060](https://jungol.co.kr/problem/1060) | 최소비용신장트리 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1060.cpp) |
+| [01112](https://jungol.co.kr/problem/1112) | 줄자접기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./01xxx/1112.cpp) |
 | [01182](https://jungol.co.kr/problem/1182) | 벽타기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1182.cpp) |
 | [01246](https://jungol.co.kr/problem/1246) | 성적 바꾸기 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./01xxx/1246.cpp) |
 | [01291](https://jungol.co.kr/problem/1291) | 구구단 4 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./01xxx/1291.cpp) |
@@ -41,7 +42,6 @@
 | [08111](https://jungol.co.kr/problem/8111) | 서브태스크 헤어스타일이 비슷한 고슴도치 | <img alt="Ruby 1" src="assets/30.svg" height="24"> | [C++](./08xxx/8111.cpp) |
 | [08148](https://jungol.co.kr/problem/8148) | 서브태스크 약속 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8148.cpp) |
 | [08445](https://jungol.co.kr/problem/8445) | auto_awesome 스페셜 저지 call_split 서브태스크 C) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./08xxx/8445.cpp) |
-| [08551](https://jungol.co.kr/problem/8551) | Tutorial : STL Sort 1 ( 기본 사용법 ) | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./08xxx/8551.cpp) |
 | [08840](https://jungol.co.kr/problem/8840) | 서브태스크 칩 교환 | <img alt="Platinum 3" src="assets/18.svg" height="24"> | [C++](./08xxx/8840.cpp) |
 | [08987](https://jungol.co.kr/problem/8987) | 서브태스크 부분 문자열 만들기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8987.cpp) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./10xxx/10454.cpp) |
