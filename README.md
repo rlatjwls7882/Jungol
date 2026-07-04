@@ -15,18 +15,18 @@
 | [01840](https://jungol.co.kr/problem/1840) | 치즈 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1840.cpp) |
 | [01871](https://jungol.co.kr/problem/1871) | 줄세우기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1871.cpp) |
 | [01897](https://jungol.co.kr/problem/1897) | 자리배치0 | <img alt="Diamond 2" src="assets/24.svg" height="24"> | [C++](./01xxx/1897.cpp) |
-| [02107](https://jungol.co.kr/problem/2107) | 축구 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2107.cpp) |
 | [02117](https://jungol.co.kr/problem/2117) | 야바위 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2117.cpp) |
 | [02358](https://jungol.co.kr/problem/2358) | 트리의 중앙 | <img alt="Silver 2" src="assets/9.svg" height="24"> | [C++](./02xxx/2358.cpp) |
 | [02440](https://jungol.co.kr/problem/2440) | 설탕 배달(secer) | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./02xxx/2440.cpp) |
 | [02736](https://jungol.co.kr/problem/2736) | 버블정렬(중) | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2736.cpp) |
+| [02859](https://jungol.co.kr/problem/2859) | 컬러볼 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2859.cpp) |
 | [03334](https://jungol.co.kr/problem/3334) | 회문 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./03xxx/3334.cpp) |
 | [04053](https://jungol.co.kr/problem/4053) | MooTube | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./04xxx/4053.cpp) |
 | [04225](https://jungol.co.kr/problem/4225) | auto_awesome 스페셜 저지 ax+by=1 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./04xxx/4225.cpp) |
 | [04380](https://jungol.co.kr/problem/4380) | 피곤한 귀가길 | <img alt="Gold 1" src="assets/15.svg" height="24"> | [C++](./04xxx/4380.cpp) |
 | [04413](https://jungol.co.kr/problem/4413) | 이진 암호화 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./04xxx/4413.cpp) |
 | [04993](https://jungol.co.kr/problem/4993) | 일진법 | <img alt="Ruby 1" src="assets/30.svg" height="24"> | [C++](./04xxx/4993.cpp) |
-| [05038](https://jungol.co.kr/problem/5038) | 쇼핑몰 | <img alt="Ruby 5" src="assets/26.svg" height="24"> | [C++](./05xxx/5038.cpp) |
+| [05038](https://jungol.co.kr/problem/5038) | 쇼핑몰 | <img alt="Ruby 4" src="assets/27.svg" height="24"> | [C++](./05xxx/5038.cpp) |
 | [05043](https://jungol.co.kr/problem/5043) | 서브태스크 자습 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./05xxx/5043.cpp) |
 | [05377](https://jungol.co.kr/problem/5377) | 소는 풀을 좋아해 | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./05xxx/5377.cpp) |
 | [05461](https://jungol.co.kr/problem/5461) | 숫자구슬(medium) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5461.cpp) |
