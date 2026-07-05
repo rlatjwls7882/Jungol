@@ -3,7 +3,6 @@
 | No. | Title | Difficulty | Solution |
 |:---|:---|:---:|:---:|
 | [01001](https://jungol.co.kr/problem/1001) | 강아지와 병아리 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./01xxx/1001.cpp) |
-| [01002](https://jungol.co.kr/problem/1002) | 최대공약수, 최소공배수 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./01xxx/1002.cpp) |
 | [01054](https://jungol.co.kr/problem/1054) | 제곱근 | <img alt="Diamond 5" src="assets/21.svg" height="24"> | [C++](./01xxx/1054.cpp) |
 | [01060](https://jungol.co.kr/problem/1060) | 최소비용신장트리 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1060.cpp) |
 | [01112](https://jungol.co.kr/problem/1112) | 줄자접기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./01xxx/1112.cpp) |
@@ -34,6 +33,7 @@
 | [05607](https://jungol.co.kr/problem/5607) | 서브태스크 피자먹고 기분 피자 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5607.cpp) |
 | [05628](https://jungol.co.kr/problem/5628) | 서브태스크 반딧불이 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5628.cpp) |
 | [05647](https://jungol.co.kr/problem/5647) | 서브태스크 크림빵 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./05xxx/5647.cpp) |
+| [05683](https://jungol.co.kr/problem/5683) | 천사소년 서준이 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./05xxx/5683.cpp) |
 | [05930](https://jungol.co.kr/problem/5930) | 슬픔을 나누면 2 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5930.cpp) |
 | [05937](https://jungol.co.kr/problem/5937) | 서브태스크 두 상단 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./05xxx/5937.cpp) |
 | [06326](https://jungol.co.kr/problem/6326) | 서브태스크 백열등 2 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./06xxx/6326.cpp) |
