@@ -19,12 +19,12 @@
 | [02440](https://jungol.co.kr/problem/2440) | 설탕 배달(secer) | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./02xxx/2440.cpp) |
 | [02736](https://jungol.co.kr/problem/2736) | 버블정렬(중) | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2736.cpp) |
 | [02859](https://jungol.co.kr/problem/2859) | 컬러볼 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2859.cpp) |
+| [03230](https://jungol.co.kr/problem/3230) | 두 로봇 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./03xxx/3230.cpp) |
 | [03334](https://jungol.co.kr/problem/3334) | 회문 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./03xxx/3334.cpp) |
 | [04053](https://jungol.co.kr/problem/4053) | MooTube | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./04xxx/4053.cpp) |
 | [04225](https://jungol.co.kr/problem/4225) | auto_awesome 스페셜 저지 ax+by=1 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./04xxx/4225.cpp) |
 | [04380](https://jungol.co.kr/problem/4380) | 피곤한 귀가길 | <img alt="Gold 1" src="assets/15.svg" height="24"> | [C++](./04xxx/4380.cpp) |
 | [04413](https://jungol.co.kr/problem/4413) | 이진 암호화 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./04xxx/4413.cpp) |
-| [04993](https://jungol.co.kr/problem/4993) | 일진법 | <img alt="Ruby 1" src="assets/30.svg" height="24"> | [C++](./04xxx/4993.cpp) |
 | [05038](https://jungol.co.kr/problem/5038) | 쇼핑몰 | <img alt="Ruby 4" src="assets/27.svg" height="24"> | [C++](./05xxx/5038.cpp) |
 | [05043](https://jungol.co.kr/problem/5043) | 서브태스크 자습 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./05xxx/5043.cpp) |
 | [05377](https://jungol.co.kr/problem/5377) | 소는 풀을 좋아해 | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./05xxx/5377.cpp) |
