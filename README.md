@@ -13,7 +13,6 @@
 | [01871](https://jungol.co.kr/problem/1871) | 줄세우기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1871.cpp) |
 | [01897](https://jungol.co.kr/problem/1897) | 자리배치0 | <img alt="Diamond 2" src="assets/24.svg" height="24"> | [C++](./01xxx/1897.cpp) |
 | [02358](https://jungol.co.kr/problem/2358) | 트리의 중앙 | <img alt="Silver 2" src="assets/9.svg" height="24"> | [C++](./02xxx/2358.cpp) |
-| [02440](https://jungol.co.kr/problem/2440) | 설탕 배달(secer) | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./02xxx/2440.cpp) |
 | [02736](https://jungol.co.kr/problem/2736) | 버블정렬(중) | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2736.cpp) |
 | [02859](https://jungol.co.kr/problem/2859) | 컬러볼 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2859.cpp) |
 | [03230](https://jungol.co.kr/problem/3230) | 두 로봇 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./03xxx/3230.cpp) |
@@ -42,6 +41,7 @@
 | [08111](https://jungol.co.kr/problem/8111) | 서브태스크 헤어스타일이 비슷한 고슴도치 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./08xxx/8111.cpp) |
 | [08148](https://jungol.co.kr/problem/8148) | 서브태스크 약속 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8148.cpp) |
 | [08445](https://jungol.co.kr/problem/8445) | auto_awesome 스페셜 저지 call_split 서브태스크 C) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./08xxx/8445.cpp) |
+| [08591](https://jungol.co.kr/problem/8591) | 서브태스크 직사각형의 최대 합 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./08xxx/8591.cpp) |
 | [08668](https://jungol.co.kr/problem/8668) | 두루마리 휴지 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./08xxx/8668.cpp) |
 | [08840](https://jungol.co.kr/problem/8840) | 서브태스크 칩 교환 | <img alt="Platinum 3" src="assets/18.svg" height="24"> | [C++](./08xxx/8840.cpp) |
 | [08987](https://jungol.co.kr/problem/8987) | 서브태스크 부분 문자열 만들기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8987.cpp) |
