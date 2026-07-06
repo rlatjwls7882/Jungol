@@ -19,6 +19,7 @@
 | [02859](https://jungol.co.kr/problem/2859) | 컬러볼 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2859.cpp) |
 | [03230](https://jungol.co.kr/problem/3230) | 두 로봇 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./03xxx/3230.cpp) |
 | [03334](https://jungol.co.kr/problem/3334) | 회문 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./03xxx/3334.cpp) |
+| [03669](https://jungol.co.kr/problem/3669) | 가장 먼 두 점 1 | <img alt="Platinum 3" src="assets/18.svg" height="24"> | [C++](./03xxx/3669.cpp) |
 | [04053](https://jungol.co.kr/problem/4053) | MooTube | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./04xxx/4053.cpp) |
 | [04225](https://jungol.co.kr/problem/4225) | auto_awesome 스페셜 저지 ax+by=1 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./04xxx/4225.cpp) |
 | [04380](https://jungol.co.kr/problem/4380) | 피곤한 귀가길 | <img alt="Gold 1" src="assets/15.svg" height="24"> | [C++](./04xxx/4380.cpp) |
@@ -48,7 +49,6 @@
 | [11191](https://jungol.co.kr/problem/11191) | 슬롯 머신 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./11xxx/11191.cpp) |
 | [11611](https://jungol.co.kr/problem/11611) | auto_awesome 스페셜 저지 발굴 | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./11xxx/11611.cpp) |
 | [12012](https://jungol.co.kr/problem/12012) |  | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./12xxx/12012.cpp) |
-| [12260](https://jungol.co.kr/problem/12260) | Contest Title | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./12xxx/12260.cpp) |
 | [12429](https://jungol.co.kr/problem/12429) | component_exchange 인터랙티브 SC ON 찾기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./12xxx/12429.cpp) |
 | [15643](https://jungol.co.kr/problem/15643) | auto_awesome 스페셜 저지 초등수학 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./15xxx/15643.cpp) |
 | [19527](https://jungol.co.kr/problem/19527) | auto_awesome 스페셜 저지 피보나치 빈도 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./19xxx/19527.cpp) |
