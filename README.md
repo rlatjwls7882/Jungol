@@ -27,13 +27,12 @@
 | [04413](https://jungol.co.kr/problem/4413) | 이진 암호화 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./04xxx/4413.cpp) |
 | [05038](https://jungol.co.kr/problem/5038) | 쇼핑몰 | <img alt="Ruby 4" src="assets/27.svg" height="24"> | [C++](./05xxx/5038.cpp) |
 | [05043](https://jungol.co.kr/problem/5043) | 서브태스크 자습 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./05xxx/5043.cpp) |
-| [05377](https://jungol.co.kr/problem/5377) | 소는 풀을 좋아해 | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./05xxx/5377.cpp) |
+| [05377](https://jungol.co.kr/problem/5377) | 소는 풀을 좋아해 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5377.cpp) |
 | [05461](https://jungol.co.kr/problem/5461) | 숫자구슬(medium) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5461.cpp) |
 | [05513](https://jungol.co.kr/problem/5513) | 극장 좌석 배치 2 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5513.cpp) |
 | [05539](https://jungol.co.kr/problem/5539) | 서브태스크 연구원과 실험 장비 (주식회사) | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./05xxx/5539.cpp) |
 | [05607](https://jungol.co.kr/problem/5607) | 서브태스크 피자먹고 기분 피자 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5607.cpp) |
 | [05628](https://jungol.co.kr/problem/5628) | 서브태스크 반딧불이 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5628.cpp) |
-| [05647](https://jungol.co.kr/problem/5647) | 서브태스크 크림빵 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./05xxx/5647.cpp) |
 | [05683](https://jungol.co.kr/problem/5683) | 천사소년 서준이 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./05xxx/5683.cpp) |
 | [05930](https://jungol.co.kr/problem/5930) | 슬픔을 나누면 2 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5930.cpp) |
 | [05937](https://jungol.co.kr/problem/5937) | 서브태스크 두 상단 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./05xxx/5937.cpp) |
@@ -48,7 +47,8 @@
 | [08987](https://jungol.co.kr/problem/8987) | 서브태스크 부분 문자열 만들기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8987.cpp) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./10xxx/10454.cpp) |
 | [11191](https://jungol.co.kr/problem/11191) | 슬롯 머신 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./11xxx/11191.cpp) |
+| [11611](https://jungol.co.kr/problem/11611) | auto_awesome 스페셜 저지 발굴 | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./11xxx/11611.cpp) |
 | [12012](https://jungol.co.kr/problem/12012) |  | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./12xxx/12012.cpp) |
 | [12260](https://jungol.co.kr/problem/12260) | Contest Title | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./12xxx/12260.cpp) |
-| [12429](https://jungol.co.kr/problem/12429) | component_exchange 인터랙티브 SC ON 찾기 | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./12xxx/12429.cpp) |
+| [12429](https://jungol.co.kr/problem/12429) | component_exchange 인터랙티브 SC ON 찾기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./12xxx/12429.cpp) |
 | [19527](https://jungol.co.kr/problem/19527) | auto_awesome 스페셜 저지 피보나치 빈도 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./19xxx/19527.cpp) |
