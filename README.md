@@ -39,7 +39,6 @@
 | [07984](https://jungol.co.kr/problem/7984) | 서브태스크 점대칭도형 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./07xxx/7984.cpp) |
 | [08057](https://jungol.co.kr/problem/8057) | 서브태스크 직선과 두 점 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./08xxx/8057.cpp) |
 | [08111](https://jungol.co.kr/problem/8111) | 서브태스크 헤어스타일이 비슷한 고슴도치 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./08xxx/8111.cpp) |
-| [08148](https://jungol.co.kr/problem/8148) | 서브태스크 약속 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8148.cpp) |
 | [08445](https://jungol.co.kr/problem/8445) | auto_awesome 스페셜 저지 call_split 서브태스크 C) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./08xxx/8445.cpp) |
 | [08591](https://jungol.co.kr/problem/8591) | 서브태스크 직사각형의 최대 합 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./08xxx/8591.cpp) |
 | [08668](https://jungol.co.kr/problem/8668) | 두루마리 휴지 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./08xxx/8668.cpp) |
@@ -50,5 +49,6 @@
 | [11611](https://jungol.co.kr/problem/11611) | auto_awesome 스페셜 저지 발굴 | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./11xxx/11611.cpp) |
 | [12012](https://jungol.co.kr/problem/12012) |  | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./12xxx/12012.cpp) |
 | [12429](https://jungol.co.kr/problem/12429) | component_exchange 인터랙티브 SC ON 찾기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./12xxx/12429.cpp) |
+| [14772](https://jungol.co.kr/problem/14772) | 안도르의 역습 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./14xxx/14772.cpp) |
 | [15643](https://jungol.co.kr/problem/15643) | auto_awesome 스페셜 저지 초등수학 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./15xxx/15643.cpp) |
 | [19527](https://jungol.co.kr/problem/19527) | auto_awesome 스페셜 저지 피보나치 빈도 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./19xxx/19527.cpp) |
