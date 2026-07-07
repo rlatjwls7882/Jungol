@@ -2,7 +2,7 @@
 
 | No. | Title | Difficulty | Solution |
 |:---|:---|:---:|:---:|
-| [01054](https://jungol.co.kr/problem/1054) | 제곱근 | <img alt="Diamond 5" src="assets/21.svg" height="24"> | [C++](./01xxx/1054.cpp) |
+| [01054](https://jungol.co.kr/problem/1054) | 제곱근 | <img alt="Diamond 4" src="assets/22.svg" height="24"> | [C++](./01xxx/1054.cpp) |
 | [01060](https://jungol.co.kr/problem/1060) | 최소비용신장트리 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1060.cpp) |
 | [01182](https://jungol.co.kr/problem/1182) | 벽타기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1182.cpp) |
 | [01246](https://jungol.co.kr/problem/1246) | 성적 바꾸기 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./01xxx/1246.cpp) |
@@ -33,7 +33,7 @@
 | [05607](https://jungol.co.kr/problem/5607) | 서브태스크 피자먹고 기분 피자 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5607.cpp) |
 | [05628](https://jungol.co.kr/problem/5628) | 서브태스크 반딧불이 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5628.cpp) |
 | [05683](https://jungol.co.kr/problem/5683) | 천사소년 서준이 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./05xxx/5683.cpp) |
-| [05930](https://jungol.co.kr/problem/5930) | 슬픔을 나누면 2 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5930.cpp) |
+| [05883](https://jungol.co.kr/problem/5883) | 서브태스크 팬케이크 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./05xxx/5883.cpp) |
 | [05937](https://jungol.co.kr/problem/5937) | 서브태스크 두 상단 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./05xxx/5937.cpp) |
 | [06070](https://jungol.co.kr/problem/6070) | 사탕 지팡이 축제 | <img alt="Ruby 3" src="assets/28.svg" height="24"> | [C++](./06xxx/6070.cpp) |
 | [06326](https://jungol.co.kr/problem/6326) | 서브태스크 백열등 2 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./06xxx/6326.cpp) |
