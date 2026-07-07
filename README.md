@@ -6,7 +6,7 @@
 | [01060](https://jungol.co.kr/problem/1060) | 최소비용신장트리 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1060.cpp) |
 | [01182](https://jungol.co.kr/problem/1182) | 벽타기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1182.cpp) |
 | [01246](https://jungol.co.kr/problem/1246) | 성적 바꾸기 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./01xxx/1246.cpp) |
-| [01350](https://jungol.co.kr/problem/1350) | - done - how_to_reg - 로드 중... | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./01xxx/1350.cpp) |
+| [01350](https://jungol.co.kr/problem/1350) | 최대신장트리 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1350.cpp) |
 | [01364](https://jungol.co.kr/problem/1364) | 방면적 넓히기(The Castle) | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1364.cpp) |
 | [01840](https://jungol.co.kr/problem/1840) | 치즈 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1840.cpp) |
 | [01871](https://jungol.co.kr/problem/1871) | 줄세우기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1871.cpp) |
@@ -35,6 +35,7 @@
 | [05683](https://jungol.co.kr/problem/5683) | 천사소년 서준이 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./05xxx/5683.cpp) |
 | [05930](https://jungol.co.kr/problem/5930) | 슬픔을 나누면 2 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5930.cpp) |
 | [05937](https://jungol.co.kr/problem/5937) | 서브태스크 두 상단 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./05xxx/5937.cpp) |
+| [06070](https://jungol.co.kr/problem/6070) | 사탕 지팡이 축제 | <img alt="Ruby 3" src="assets/28.svg" height="24"> | [C++](./06xxx/6070.cpp) |
 | [06326](https://jungol.co.kr/problem/6326) | 서브태스크 백열등 2 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./06xxx/6326.cpp) |
 | [07984](https://jungol.co.kr/problem/7984) | 서브태스크 점대칭도형 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./07xxx/7984.cpp) |
 | [08057](https://jungol.co.kr/problem/8057) | 서브태스크 직선과 두 점 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./08xxx/8057.cpp) |
@@ -42,7 +43,6 @@
 | [08445](https://jungol.co.kr/problem/8445) | auto_awesome 스페셜 저지 call_split 서브태스크 C) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./08xxx/8445.cpp) |
 | [08591](https://jungol.co.kr/problem/8591) | 서브태스크 직사각형의 최대 합 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./08xxx/8591.cpp) |
 | [08668](https://jungol.co.kr/problem/8668) | 두루마리 휴지 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./08xxx/8668.cpp) |
-| [08840](https://jungol.co.kr/problem/8840) | 서브태스크 칩 교환 | <img alt="Platinum 3" src="assets/18.svg" height="24"> | [C++](./08xxx/8840.cpp) |
 | [08987](https://jungol.co.kr/problem/8987) | 서브태스크 부분 문자열 만들기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8987.cpp) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./10xxx/10454.cpp) |
 | [11191](https://jungol.co.kr/problem/11191) | 슬롯 머신 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./11xxx/11191.cpp) |
