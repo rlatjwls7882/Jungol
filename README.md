@@ -99,6 +99,7 @@
 | [11191](https://jungol.co.kr/problem/11191) | 슬롯 머신 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./11xxx/11191.cpp) |
 | [11611](https://jungol.co.kr/problem/11611) | 발굴 | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./11xxx/11611.cpp) |
 | [12012](https://jungol.co.kr/problem/12012) | 2048 | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./12xxx/12012.cpp) |
+| [12205](https://jungol.co.kr/problem/12205) | 포화이진트리(perfect binary tree)의 중위순회 | <img alt="Silver 4" src="assets/7.svg" height="24"> | [C++](./12xxx/12205.cpp) |
 | [12260](https://jungol.co.kr/problem/12260) | Contest Title | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./12xxx/12260.cpp) |
 | [12338](https://jungol.co.kr/problem/12338) | 구구단 1 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./12xxx/12338.cpp) |
 | [12422](https://jungol.co.kr/problem/12422) | 구구단 2 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./12xxx/12422.cpp) |
