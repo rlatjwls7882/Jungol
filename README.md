@@ -82,6 +82,7 @@
 | [09003](https://jungol.co.kr/problem/9003) | 출력 - 연습문제3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9003.cpp) |
 | [09004](https://jungol.co.kr/problem/9004) | 출력 - 연습문제4 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9004.cpp) |
 | [09005](https://jungol.co.kr/problem/9005) | 출력 - 연습문제5 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9005.cpp) |
+| [09006](https://jungol.co.kr/problem/9006) | 출력 - 연습문제6 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9006.cpp) |
 | [09278](https://jungol.co.kr/problem/9278) | 반복제어문1 - 자가진단 6-3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [Python](./09xxx/9278.py) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./10xxx/10454.cpp) |
 | [11191](https://jungol.co.kr/problem/11191) | 슬롯 머신 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./11xxx/11191.cpp) |
