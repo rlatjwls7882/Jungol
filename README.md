@@ -17,6 +17,7 @@
 | [01364](https://jungol.co.kr/problem/1364) | 방면적 넓히기(The Castle) | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1364.cpp) |
 | [01514](https://jungol.co.kr/problem/1514) | 타일 채우기 | <img alt="Silver 5" src="assets/6.svg" height="24"> | [C++](./01xxx/1514.cpp) |
 | [01692](https://jungol.co.kr/problem/1692) | 곱셈 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./01xxx/1692.cpp) |
+| [01776](https://jungol.co.kr/problem/1776) | 숫자 만들기 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1776.cpp) |
 | [01798](https://jungol.co.kr/problem/1798) | 피자가게 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1798.cpp) |
 | [01840](https://jungol.co.kr/problem/1840) | 치즈 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1840.cpp) |
 | [01871](https://jungol.co.kr/problem/1871) | 줄세우기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1871.cpp) |
@@ -49,7 +50,7 @@
 | [05607](https://jungol.co.kr/problem/5607) | 피자먹고 기분 피자 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5607.cpp) |
 | [05628](https://jungol.co.kr/problem/5628) | 반딧불이 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5628.cpp) |
 | [05647](https://jungol.co.kr/problem/5647) | 크림빵 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./05xxx/5647.cpp) |
-| [05683](https://jungol.co.kr/problem/5683) | 천사소년 서준이 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./05xxx/5683.cpp) |
+| [05683](https://jungol.co.kr/problem/5683) | 로드 중... | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./05xxx/5683.cpp) |
 | [05883](https://jungol.co.kr/problem/5883) | 팬케이크 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./05xxx/5883.cpp) |
 | [05930](https://jungol.co.kr/problem/5930) | 슬픔을 나누면 2 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5930.cpp) |
 | [05937](https://jungol.co.kr/problem/5937) | 두 상단 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./05xxx/5937.cpp) |
