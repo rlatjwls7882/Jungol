@@ -3,6 +3,7 @@
 | No. | Title | Difficulty | Solution |
 |:---|:---|:---:|:---:|
 | [00101](https://jungol.co.kr/problem/101) | 출력 - 형성평가1 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/101.cpp) |
+| [00102](https://jungol.co.kr/problem/102) | 출력 - 형성평가2 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/102.cpp) |
 | [00501](https://jungol.co.kr/problem/501) | 출력 - 자가진단1 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/501.cpp) |
 | [00502](https://jungol.co.kr/problem/502) | 출력 - 자가진단2 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/502.cpp) |
 | [00503](https://jungol.co.kr/problem/503) | 출력 - 자가진단3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/503.cpp) |
