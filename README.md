@@ -16,6 +16,7 @@
 | [01364](https://jungol.co.kr/problem/1364) | 방면적 넓히기(The Castle) | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1364.cpp) |
 | [01514](https://jungol.co.kr/problem/1514) | 타일 채우기 | <img alt="Silver 5" src="assets/6.svg" height="24"> | [C++](./01xxx/1514.cpp) |
 | [01692](https://jungol.co.kr/problem/1692) | 곱셈 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./01xxx/1692.cpp) |
+| [01798](https://jungol.co.kr/problem/1798) | 피자가게 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./01xxx/1798.cpp) |
 | [01840](https://jungol.co.kr/problem/1840) | 치즈 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1840.cpp) |
 | [01871](https://jungol.co.kr/problem/1871) | 줄세우기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1871.cpp) |
 | [01897](https://jungol.co.kr/problem/1897) | 자리배치0 | <img alt="Diamond 2" src="assets/24.svg" height="24"> | [C++](./01xxx/1897.cpp) |
@@ -78,4 +79,4 @@
 | [12429](https://jungol.co.kr/problem/12429) | SC ON 찾기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./12xxx/12429.cpp) |
 | [14772](https://jungol.co.kr/problem/14772) | 안도르의 역습 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./14xxx/14772.cpp) |
 | [15643](https://jungol.co.kr/problem/15643) | 초등수학 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./15xxx/15643.cpp) |
-| [19527](https://jungol.co.kr/problem/19527) | 로드 중... | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./19xxx/19527.cpp) |
+| [19527](https://jungol.co.kr/problem/19527) | 피보나치 빈도 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./19xxx/19527.cpp) |
