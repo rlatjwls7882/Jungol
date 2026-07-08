@@ -27,6 +27,7 @@
 | [01341](https://jungol.co.kr/problem/1341) | 구구단 3 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./01xxx/1341.cpp) |
 | [01350](https://jungol.co.kr/problem/1350) | 최대신장트리 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1350.cpp) |
 | [01364](https://jungol.co.kr/problem/1364) | 방면적 넓히기(The Castle) | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1364.cpp) |
+| [01430](https://jungol.co.kr/problem/1430) | 숫자의 개수 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./01xxx/1430.cpp) |
 | [01514](https://jungol.co.kr/problem/1514) | 타일 채우기 | <img alt="Silver 5" src="assets/6.svg" height="24"> | [C++](./01xxx/1514.cpp) |
 | [01692](https://jungol.co.kr/problem/1692) | 곱셈 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./01xxx/1692.cpp) |
 | [01776](https://jungol.co.kr/problem/1776) | 숫자 만들기 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1776.cpp) |
