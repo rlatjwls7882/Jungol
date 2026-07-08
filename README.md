@@ -39,11 +39,11 @@
 | [06070](https://jungol.co.kr/problem/6070) | 사탕 지팡이 축제 | <img alt="Ruby 3" src="assets/28.svg" height="24"> | [C++](./06xxx/6070.cpp) |
 | [06326](https://jungol.co.kr/problem/6326) | 서브태스크 백열등 2 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./06xxx/6326.cpp) |
 | [07984](https://jungol.co.kr/problem/7984) | 서브태스크 점대칭도형 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./07xxx/7984.cpp) |
-| [08057](https://jungol.co.kr/problem/8057) | 서브태스크 직선과 두 점 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./08xxx/8057.cpp) |
 | [08111](https://jungol.co.kr/problem/8111) | 서브태스크 헤어스타일이 비슷한 고슴도치 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./08xxx/8111.cpp) |
 | [08445](https://jungol.co.kr/problem/8445) | auto_awesome 스페셜 저지 call_split 서브태스크 C) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./08xxx/8445.cpp) |
 | [08591](https://jungol.co.kr/problem/8591) | 서브태스크 직사각형의 최대 합 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./08xxx/8591.cpp) |
 | [08668](https://jungol.co.kr/problem/8668) | 두루마리 휴지 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./08xxx/8668.cpp) |
+| [08946](https://jungol.co.kr/problem/8946) | 분수 (Fraction) | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./08xxx/8946.cpp) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./10xxx/10454.cpp) |
 | [11191](https://jungol.co.kr/problem/11191) | 슬롯 머신 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./11xxx/11191.cpp) |
 | [11611](https://jungol.co.kr/problem/11611) | auto_awesome 스페셜 저지 발굴 | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./11xxx/11611.cpp) |
