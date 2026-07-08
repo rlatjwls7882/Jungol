@@ -43,6 +43,7 @@ TIER = {
 }
 
 TIER_TO_LEVEL = {name.lower(): level for level, name in TIER.items()}
+TIER_TO_LEVEL["unranked"] = 0
 TIER_GROUP_BASE = {
     "bronze": 0,
     "silver": 5,
@@ -93,7 +94,8 @@ MATERIAL_ICON_CLASSES = {
 
 LEVEL_PATTERN = r"(?:[1-9]|[1-2]\d|30)"
 DIVISION_PATTERN = r"(?:III|IV|II|V|I|[1-5])"
-TIER_NAME_PATTERN = rf"(?:Bronze|Silver|Gold|Platinum|Diamond|Ruby)\s+{DIVISION_PATTERN}"
+RANKED_TIER_PATTERN = rf"(?:Bronze|Silver|Gold|Platinum|Diamond|Ruby)\s+{DIVISION_PATTERN}"
+TIER_NAME_PATTERN = rf"(?:{RANKED_TIER_PATTERN}|Unranked)"
 
 
 def normalize(text):
@@ -162,10 +164,27 @@ def remove_noise_tags(soup):
             tag.decompose()
 
 
+def get_linked_problem_ids(container):
+    ids = set()
+
+    for a in BeautifulSoup(str(container), "html.parser").find_all("a", href=re.compile(r"/problem/(\d+)")):
+        m = re.search(r"/problem/(\d+)", a.get("href", ""))
+
+        if m:
+            ids.add(int(m.group(1)))
+
+    return ids
+
+
 def tier_name_to_level(tier_name):
+    tier_name = normalize(tier_name)
+
+    if tier_name.lower() == "unranked":
+        return "0"
+
     m = re.fullmatch(
         r"(Bronze|Silver|Gold|Platinum|Diamond|Ruby)\s+([1-5]|I|II|III|IV|V)",
-        normalize(tier_name),
+        tier_name,
         re.I,
     )
 
@@ -189,7 +208,7 @@ def extract_level_from_text(text):
     for m in re.finditer(TIER_NAME_PATTERN, text, re.I):
         level = tier_name_to_level(m.group(0))
 
-        if level:
+        if level != "":
             return level
 
     return ""
@@ -321,7 +340,7 @@ def extract_level_from_html(html):
 
             level = tier_name_to_level(value)
 
-            if level:
+            if level != "":
                 return level
 
     return extract_level_from_text(soup.get_text(" ", strip=True))
@@ -334,11 +353,14 @@ def extract_title_from_container(container, problem_id):
 
     text = normalize(soup.get_text(" ", strip=True))
     no = format_problem_no(problem_id)
+    linked_problem_ids = get_linked_problem_ids(container)
 
     patterns = [
         rf"(?:#?{problem_id}|#?{no})\s*(?:정답)?\s*(?:{LEVEL_PATTERN}|\?)?\s+(.+)",
-        rf"(?:정답)?\s*(?:{LEVEL_PATTERN}|\?)?\s+(.+)",
     ]
+
+    if len(linked_problem_ids) <= 1:
+        patterns.append(rf"(?:정답)?\s*(?:{LEVEL_PATTERN}|\?)?\s+(.+)")
 
     for pattern in patterns:
         m = re.search(pattern, text, re.I)
@@ -350,7 +372,10 @@ def extract_title_from_container(container, problem_id):
         if title:
             return title
 
-    return clean_title(text, problem_id)
+    if len(linked_problem_ids) <= 1:
+        return clean_title(text, problem_id)
+
+    return ""
 
 
 def get_solved_problem_infos():
@@ -381,17 +406,22 @@ def get_solved_problem_infos():
             if parent is None:
                 break
 
+            linked_problem_ids = get_linked_problem_ids(parent)
             parent_html = str(parent)
+            parent_text = BeautifulSoup(parent_html, "html.parser").get_text(" ", strip=True)
             candidate_title = extract_title_from_container(parent, problem_id)
-            candidate_difficulty = extract_level_from_html(parent_html)
+            candidate_difficulty = extract_level_after_title(parent_text, candidate_title)
+
+            if not candidate_difficulty and len(linked_problem_ids) <= 1:
+                candidate_difficulty = extract_level_from_html(parent_html)
 
             if not title and candidate_title and len(candidate_title) <= 120:
                 title = candidate_title
 
-            if not difficulty and candidate_difficulty:
+            if not difficulty and candidate_difficulty != "":
                 difficulty = candidate_difficulty
 
-            if title and difficulty:
+            if title and difficulty != "":
                 break
 
             parent = parent.parent
@@ -402,7 +432,7 @@ def get_solved_problem_infos():
         if title:
             infos[problem_id]["title"] = title
 
-        if difficulty:
+        if difficulty != "":
             infos[problem_id]["difficulty"] = difficulty
 
     if not infos:
@@ -488,11 +518,11 @@ def extract_difficulty_from_html(html, problem_id, title):
         segment = text[index:index + 700]
 
         level = extract_level_after_title(segment, title)
-        if level:
+        if level != "":
             return level
 
         level = extract_level_from_text(segment)
-        if level:
+        if level != "":
             return level
 
         if title:
@@ -532,7 +562,7 @@ def get_problem_info(problem_id):
         if page_title:
             title = page_title
 
-        if page_difficulty:
+        if page_difficulty != "":
             difficulty = page_difficulty
     except Exception:
         pass
