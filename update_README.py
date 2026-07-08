@@ -12,6 +12,7 @@ BASE_URL = "https://jungol.co.kr"
 ACCOUNT_URL = f"{BASE_URL}/account/@{HANDLE}"
 
 INFO_CACHE = {}
+ACCOUNT_INFO_CACHE = None
 
 EXT = {
     ".ada": "Ada",
@@ -31,48 +32,97 @@ EXT = {
     ".rs": "Rust",
 }
 
-def get_problem_tier(level):
-    tier = {
-        0: "Unrated",
-        1: "Bronze 5", 2: "Bronze 4", 3: "Bronze 3", 4: "Bronze 2", 5: "Bronze 1",
-        6: "Silver 5", 7: "Silver 4", 8: "Silver 3", 9: "Silver 2", 10: "Silver 1",
-        11: "Gold 5", 12: "Gold 4", 13: "Gold 3", 14: "Gold 2", 15: "Gold 1",
-        16: "Platinum 5", 17: "Platinum 4", 18: "Platinum 3", 19: "Platinum 2", 20: "Platinum 1",
-        21: "Diamond 5", 22: "Diamond 4", 23: "Diamond 3", 24: "Diamond 2", 25: "Diamond 1",
-        26: "Ruby 5", 27: "Ruby 4", 28: "Ruby 3", 29: "Ruby 2", 30: "Ruby 1",
-    }
+TIER = {
+    0: "Unrated",
+    1: "Bronze 5", 2: "Bronze 4", 3: "Bronze 3", 4: "Bronze 2", 5: "Bronze 1",
+    6: "Silver 5", 7: "Silver 4", 8: "Silver 3", 9: "Silver 2", 10: "Silver 1",
+    11: "Gold 5", 12: "Gold 4", 13: "Gold 3", 14: "Gold 2", 15: "Gold 1",
+    16: "Platinum 5", 17: "Platinum 4", 18: "Platinum 3", 19: "Platinum 2", 20: "Platinum 1",
+    21: "Diamond 5", 22: "Diamond 4", 23: "Diamond 3", 24: "Diamond 2", 25: "Diamond 1",
+    26: "Ruby 5", 27: "Ruby 4", 28: "Ruby 3", 29: "Ruby 2", 30: "Ruby 1",
+}
 
-    try:
-        level = int(level)
-    except Exception:
-        level = int(0)
+TIER_TO_LEVEL = {name.lower(): level for level, name in TIER.items()}
 
-    if level not in tier:
-        level = int(0)
+# JUNGOL 화면의 Material Symbols 텍스트와 문제 속성 배지는 get_text()에 섞인다.
+# README에는 실제 문제 제목만 남기기 위해 제목 앞쪽에서만 제거한다.
+TITLE_PREFIXES = [
+    "auto_awesome",
+    "component_exchange",
+    "call_split",
+    "upload",
+    "done",
+    "how_to_reg",
+    "keep",
+    "bookmark",
+    "star",
+    "check",
+    "code",
+    "language",
+    "translate",
+    "help",
+    "info",
+    "스페셜 저지",
+    "스페셜저지",
+    "서브태스크",
+    "인터랙티브",
+]
 
-    return f'<img alt="{tier[level]}" src="assets/{level}.svg" height="24">'
+MATERIAL_ICON_CLASSES = {
+    "material-icons",
+    "material-icons-outlined",
+    "material-icons-round",
+    "material-icons-sharp",
+    "material-symbols-outlined",
+    "material-symbols-rounded",
+    "material-symbols-sharp",
+}
 
-def request_html(url):
-    response = requests.get(
-        url,
-        impersonate="chrome",
-        timeout=20,
-        headers={
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
-            "Referer": BASE_URL + "/",
-        },
-    )
-    response.raise_for_status()
-    return response.text
+LEVEL_PATTERN = r"(?:[1-9]|[1-2]\d|30)"
 
 
 def normalize(text):
-    return re.sub(r"\s+", " ", text).strip()
+    return re.sub(r"\s+", " ", str(text)).strip()
 
 
 def escape_markdown(text):
-    return text.replace("|", "\\|").strip()
+    return normalize(text).replace("|", "\\|")
+
+
+def get_problem_tier(level):
+    try:
+        level = int(level)
+    except Exception:
+        level = 0
+
+    if level not in TIER:
+        level = 0
+
+    return f'<img alt="{TIER[level]}" src="assets/{level}.svg" height="24">'
+
+
+def request_html(url):
+    last_error = None
+
+    for _ in range(3):
+        try:
+            response = requests.get(
+                url,
+                impersonate="chrome",
+                timeout=20,
+                headers={
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                    "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
+                    "Referer": BASE_URL + "/",
+                },
+            )
+            response.raise_for_status()
+            return response.text
+        except Exception as e:
+            last_error = e
+            time.sleep(1)
+
+    raise last_error
 
 
 def get_problem_url(problem_id):
@@ -87,79 +137,231 @@ def format_problem_no(problem_id):
     return f"{problem_id:05d}"
 
 
-def get_solved_problem_ids():
-    html = request_html(ACCOUNT_URL)
+def remove_noise_tags(soup):
+    for tag in soup(["script", "style", "noscript", "svg"]):
+        tag.decompose()
 
+    for tag in soup.find_all(True):
+        classes = set(tag.get("class", []))
+        if classes & MATERIAL_ICON_CLASSES:
+            tag.decompose()
+
+
+def clean_title(title):
+    title = normalize(title)
+    title = re.sub(r"\s*-\s*JUNGOL\s*$", "", title, flags=re.I).strip()
+    title = re.sub(r"\s*\|\s*JUNGOL\s*$", "", title, flags=re.I).strip()
+    title = re.sub(r"\s+(?:timer|시간)\s+\S+.*$", "", title, flags=re.I).strip()
+    title = re.sub(r"\s+(?:memory|메모리)\s+\S+.*$", "", title, flags=re.I).strip()
+    title = re.sub(r"\s+(?:문제|입력|출력|제출|채점)\s+.*$", "", title).strip()
+
+    # '#5539 정답 16 제목'이나 '5539 16 제목' 형태에서 번호와 난이도 제거
+    title = re.sub(rf"^#?\d{{3,6}}\s*(?:정답)?\s*(?:{LEVEL_PATTERN}|\?)?\s+", "", title).strip()
+
+    changed = True
+    while changed:
+        changed = False
+
+        for prefix in TITLE_PREFIXES:
+            pattern = rf"^{re.escape(prefix)}(?:\s+|$)"
+            new_title = re.sub(pattern, "", title, flags=re.I).strip()
+
+            if new_title != title:
+                title = new_title
+                changed = True
+
+        title = re.sub(r"^[-:·•|/]+\s*", "", title).strip()
+
+    if title in ("", "문제", "JUNGOL"):
+        return ""
+
+    if re.fullmatch(r"#?\d{3,6}", title):
+        return ""
+
+    return title
+
+
+def find_solved_block(html):
     start = html.find("해결한 문제")
+
     if start == -1:
-        raise RuntimeError("계정 페이지에서 '해결한 문제' 영역을 찾지 못했습니다.")
+        return html
 
     end_candidates = [
         html.find("틀린 문제", start),
         html.find("티어 관련 정보", start),
         html.find("소속 인증", start),
     ]
-
     end_candidates = [x for x in end_candidates if x != -1]
     end = min(end_candidates) if end_candidates else len(html)
 
-    block = html[start:end]
-    problem_ids = set()
+    return html[start:end]
 
-    for m in re.finditer(r"/problem/(\d+)", block):
-        problem_ids.add(int(m.group(1)))
 
-    if not problem_ids:
-        soup = BeautifulSoup(block, "html.parser")
-        text = normalize(soup.get_text(" ", strip=True))
+def extract_level_from_html(html):
+    patterns = [
+        r"assets/([0-9]|[1-2]\d|30)\.svg",
+        r"/solved/([0-9]|[1-2]\d|30)\.svg",
+        r"/level/([0-9]|[1-2]\d|30)\.svg",
+        r"/tier/([0-9]|[1-2]\d|30)\.svg",
+        r"/difficulty/([0-9]|[1-2]\d|30)\.svg",
+        r"(?:level|tier|difficulty|rank)[-_:/ ]([0-9]|[1-2]\d|30)",
+        r'"(?:level|tier|difficulty|rank)"\s*:\s*([0-9]|[1-2]\d|30)',
+    ]
+
+    for pattern in patterns:
+        m = re.search(pattern, html, re.I)
+        if m:
+            return m.group(1)
+
+    soup = BeautifulSoup(html, "html.parser")
+
+    for tag in soup.find_all(True):
+        for attr in ("alt", "title", "aria-label"):
+            value = normalize(tag.get(attr, ""))
+            level = TIER_TO_LEVEL.get(value.lower())
+
+            if level is not None:
+                return str(level)
+
+    return ""
+
+
+def extract_title_from_container(container, problem_id):
+    html = str(container)
+    soup = BeautifulSoup(html, "html.parser")
+    remove_noise_tags(soup)
+
+    text = normalize(soup.get_text(" ", strip=True))
+    no = format_problem_no(problem_id)
+
+    patterns = [
+        rf"(?:#?{problem_id}|#?{no})\s*(?:정답)?\s*(?:{LEVEL_PATTERN}|\?)?\s+(.+)",
+        rf"(?:정답)?\s*(?:{LEVEL_PATTERN}|\?)?\s+(.+)",
+    ]
+
+    for pattern in patterns:
+        m = re.search(pattern, text, re.I)
+        if not m:
+            continue
+
+        title = clean_title(m.group(1))
+
+        if title:
+            return title
+
+    return clean_title(text)
+
+
+def get_solved_problem_infos():
+    global ACCOUNT_INFO_CACHE
+
+    if ACCOUNT_INFO_CACHE is not None:
+        return ACCOUNT_INFO_CACHE
+
+    html = request_html(ACCOUNT_URL)
+    block = find_solved_block(html)
+    soup = BeautifulSoup(block, "html.parser")
+    remove_noise_tags(soup)
+
+    infos = {}
+
+    for a in soup.find_all("a", href=re.compile(r"/problem/(\d+)")):
+        href = a.get("href", "")
+        m = re.search(r"/problem/(\d+)", href)
+
+        if not m:
+            continue
+
+        problem_id = int(m.group(1))
+        title = ""
+        difficulty = ""
+
+        # 표나 카드형 목록 모두 처리하기 위해 가까운 부모부터 검사한다.
+        parent = a
+        for _ in range(6):
+            if parent is None:
+                break
+
+            candidate_title = extract_title_from_container(parent, problem_id)
+            candidate_difficulty = extract_level_from_html(str(parent))
+
+            if candidate_title and len(candidate_title) <= 120:
+                title = candidate_title
+
+            if candidate_difficulty:
+                difficulty = candidate_difficulty
+
+            if title or difficulty:
+                break
+
+            parent = parent.parent
+
+        if problem_id not in infos:
+            infos[problem_id] = {"title": "", "difficulty": ""}
+
+        if title:
+            infos[problem_id]["title"] = title
+
+        if difficulty:
+            infos[problem_id]["difficulty"] = difficulty
+
+    if not infos:
+        text = normalize(BeautifulSoup(block, "html.parser").get_text(" ", strip=True))
 
         for m in re.finditer(r"(?<!\d)(\d{3,6})(?!\d)", text):
-            problem_ids.add(int(m.group(1)))
+            problem_id = int(m.group(1))
+            infos.setdefault(problem_id, {"title": "", "difficulty": ""})
 
-    return sorted(problem_ids)
+    ACCOUNT_INFO_CACHE = infos
+    return ACCOUNT_INFO_CACHE
+
+
+def get_solved_problem_ids():
+    return sorted(get_solved_problem_infos())
 
 
 def extract_title_from_html(html, problem_id):
     soup = BeautifulSoup(html, "html.parser")
+    remove_noise_tags(soup)
 
-    def clean_title(title):
-        title = normalize(title)
-        title = re.sub(r"\s*-\s*JUNGOL\s*$", "", title).strip()
-    
-        # 뒤쪽 메타데이터 제거
-        title = re.sub(r"\s+(?:timer|시간)\s+\S+.*$", "", title, flags=re.I).strip()
-        title = re.sub(r"\s+(?:memory|메모리)\s+\S+.*$", "", title, flags=re.I).strip()
-    
-        # 앞쪽 Material Icon / UI 텍스트 제거
-        title = re.sub(
-            r"^(upload|done|how_to_reg|keep|bookmark|star|check|call_split|code|language|translate|help|info|\d+|\?|\s)+",
-            "",
-            title,
-            flags=re.I,
-        ).strip()
-    
-        # 실제 제목이 아닌 기본 텍스트만 제거
-        if title in ("", "문제", "JUNGOL"):
-            return ""
-    
-        return title
+    # 구조화된 제목을 먼저 본다. get_text() 전체를 먼저 보면 배지명이 제목 앞에 섞일 수 있다.
+    selectors = [
+        ('meta[property="og:title"]', "content"),
+        ('meta[name="title"]', "content"),
+        ("h1", None),
+        ("h2", None),
+    ]
+
+    for selector, attr in selectors:
+        for tag in soup.select(selector):
+            raw = tag.get(attr, "") if attr else tag.get_text(" ", strip=True)
+            title = clean_title(raw)
+
+            if title:
+                return title
+
+    if soup.title and soup.title.string:
+        title = clean_title(soup.title.string)
+
+        if title:
+            return title
 
     text = normalize(soup.get_text(" ", strip=True))
     marker = f"#{problem_id}"
     index = text.find(marker)
 
+    if index == -1:
+        marker = str(problem_id)
+        index = text.find(marker)
+
     if index != -1:
         segment = text[index:index + 1000]
 
         patterns = [
-            # #1000 정답 5 두 정수 더하기 (A+B) timer 1s memory 4MB
-            rf"#{problem_id}\s*(?:정답)?\s*(?:[1-9]|[1-2]\d|30|\?)?\s*(.*?)\s+(?:timer|시간|memory|메모리)\s+",
-
-            # #1000 정답 5 두 정수 더하기 (A+B) 문제 입력 출력
-            rf"#{problem_id}\s*(?:정답)?\s*(?:[1-9]|[1-2]\d|30|\?)?\s*(.*?)\s+문제\s+",
-
-            # fallback
-            rf"#{problem_id}\s*(?:정답)?\s*(?:[1-9]|[1-2]\d|30|\?)?\s*(.*)",
+            rf"#?{problem_id}\s*(?:정답)?\s*(?:{LEVEL_PATTERN}|\?)?\s*(.*?)\s+(?:timer|시간|memory|메모리)\s+",
+            rf"#?{problem_id}\s*(?:정답)?\s*(?:{LEVEL_PATTERN}|\?)?\s*(.*?)\s+문제\s+",
+            rf"#?{problem_id}\s*(?:정답)?\s*(?:{LEVEL_PATTERN}|\?)?\s*(.*)",
         ]
 
         for pattern in patterns:
@@ -171,21 +373,17 @@ def extract_title_from_html(html, problem_id):
                 if title:
                     return title
 
-    if soup.title and soup.title.string:
-        title = clean_title(soup.title.string)
-
-        if title:
-            return title
-
     return ""
-    
+
 
 def extract_difficulty_from_html(html, problem_id, title):
-    soup = BeautifulSoup(html, "html.parser")
-    text = normalize(soup.get_text(" ", strip=True))
-
+    text = normalize(BeautifulSoup(html, "html.parser").get_text(" ", strip=True))
     marker = f"#{problem_id}"
     index = text.find(marker)
+
+    if index == -1:
+        marker = str(problem_id)
+        index = text.find(marker)
 
     if index != -1:
         segment = text[index:index + 500]
@@ -195,50 +393,44 @@ def extract_difficulty_from_html(html, problem_id, title):
 
             if title_index != -1:
                 before_title = segment[:title_index]
-                before_title = before_title.replace(marker, " ")
+                before_title = before_title.replace(f"#{problem_id}", " ")
+                before_title = before_title.replace(str(problem_id), " ")
                 before_title = before_title.replace("정답", " ")
 
-                numbers = re.findall(r"(?<!\d)([1-9]|[1-2]\d|30)(?!\d)", before_title)
+                numbers = re.findall(rf"(?<!\d)({LEVEL_PATTERN})(?!\d)", before_title)
 
                 if numbers:
                     return numbers[-1]
 
-        # title 추출 실패 시 보조 파싱
-        m = re.search(rf"#{problem_id}\s*(?:정답)?\s*([1-9]|[1-2]\d|30)\s+", segment)
+        m = re.search(rf"#?{problem_id}\s*(?:정답)?\s*({LEVEL_PATTERN})\s+", segment)
         if m:
             return m.group(1)
 
-    patterns = [
-        r"/solved/([1-9]|[1-2]\d|30)\.svg",
-        r"/level/([1-9]|[1-2]\d|30)\.svg",
-        r"/tier/([1-9]|[1-2]\d|30)\.svg",
-        r"/difficulty/([1-9]|[1-2]\d|30)\.svg",
-        r"(?:level|tier|difficulty|rank)[-_:/ ]([1-9]|[1-2]\d|30)",
-        r'"(?:level|tier|difficulty|rank)"\s*:\s*([1-9]|[1-2]\d|30)',
-    ]
-
-    for pattern in patterns:
-        m = re.search(pattern, html, re.I)
-        if m:
-            return m.group(1)
-
-    return ""
+    return extract_level_from_html(html)
 
 
 def get_problem_info(problem_id):
     if problem_id in INFO_CACHE:
         return INFO_CACHE[problem_id]
 
-    title = ""
-    difficulty = ""
+    account_info = get_solved_problem_infos().get(problem_id, {})
+    title = account_info.get("title", "")
+    difficulty = account_info.get("difficulty", "")
 
     try:
         html = request_html(get_problem_url(problem_id))
-        title = extract_title_from_html(html, problem_id)
-        difficulty = extract_difficulty_from_html(html, problem_id, title)
+        page_title = extract_title_from_html(html, problem_id)
+        page_difficulty = extract_difficulty_from_html(html, problem_id, page_title or title)
+
+        if page_title:
+            title = page_title
+
+        if page_difficulty:
+            difficulty = page_difficulty
     except Exception:
-        title = ""
-        difficulty = ""
+        pass
+
+    title = clean_title(title)
 
     INFO_CACHE[problem_id] = {
         "title": title,
@@ -273,7 +465,6 @@ def collect_solution_files():
         if not re.fullmatch(r"\d+xxx", group_dir):
             continue
 
-        # 1000.cpp, 1001.py, 12260.java
         m = re.match(r"^(\d+)\.[^.]+$", filename)
         if not m:
             continue
