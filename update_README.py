@@ -59,8 +59,6 @@ ROMAN_TO_DIVISION = {
     "v": 5,
 }
 
-# JUNGOL 화면의 Material Symbols 텍스트와 문제 속성 배지는 get_text()에 섞인다.
-# README에는 실제 문제 제목만 남기기 위해 제목 앞쪽에서만 제거한다.
 TITLE_PREFIXES = [
     "auto_awesome",
     "component_exchange",
@@ -94,7 +92,7 @@ MATERIAL_ICON_CLASSES = {
 }
 
 LEVEL_PATTERN = r"(?:[1-9]|[1-2]\d|30)"
-DIVISION_PATTERN = r"(?:[1-5]|I|II|III|IV|V)"
+DIVISION_PATTERN = r"(?:III|IV|II|V|I|[1-5])"
 TIER_NAME_PATTERN = rf"(?:Bronze|Silver|Gold|Platinum|Diamond|Ruby)\s+{DIVISION_PATTERN}"
 
 
@@ -185,6 +183,33 @@ def tier_name_to_level(tier_name):
     return str(TIER_GROUP_BASE[group] + (6 - division))
 
 
+def extract_level_from_text(text):
+    text = normalize(text)
+
+    for m in re.finditer(TIER_NAME_PATTERN, text, re.I):
+        level = tier_name_to_level(m.group(0))
+
+        if level:
+            return level
+
+    return ""
+
+
+def extract_level_after_title(text, title):
+    if not title:
+        return ""
+
+    text = normalize(text)
+    title = normalize(title)
+    index = text.find(title)
+
+    if index == -1:
+        return ""
+
+    after_title = text[index + len(title): index + len(title) + 100]
+    return extract_level_from_text(after_title)
+
+
 def remove_trailing_tier(title):
     while True:
         new_title = re.sub(
@@ -225,8 +250,6 @@ def clean_title(title, problem_id=None):
     title = re.sub(r"\s+(?:memory|메모리)\s+\S+.*$", "", title, flags=re.I).strip()
     title = re.sub(r"\s+(?:문제|입력|출력|제출|채점)\s+.*$", "", title).strip()
 
-    # '#5539 정답 16 제목'처럼 실제 문제 번호가 앞에 붙은 경우만 제거한다.
-    # '2048'처럼 숫자로만 된 실제 제목까지 지우지 않도록 임의의 앞자리 숫자는 제거하지 않는다.
     title = remove_problem_prefix(title, problem_id)
 
     changed = True
@@ -270,16 +293,6 @@ def find_solved_block(html):
     return html[start:end]
 
 
-def extract_level_from_text(text):
-    for m in re.finditer(TIER_NAME_PATTERN, normalize(text), re.I):
-        level = tier_name_to_level(m.group(0))
-
-        if level:
-            return level
-
-    return ""
-
-
 def extract_level_from_html(html):
     patterns = [
         r"assets/([0-9]|[1-2]\d|30)\.svg",
@@ -311,12 +324,7 @@ def extract_level_from_html(html):
             if level:
                 return level
 
-    level = extract_level_from_text(soup.get_text(" ", strip=True))
-
-    if level:
-        return level
-
-    return ""
+    return extract_level_from_text(soup.get_text(" ", strip=True))
 
 
 def extract_title_from_container(container, problem_id):
@@ -354,7 +362,6 @@ def get_solved_problem_infos():
     html = request_html(ACCOUNT_URL)
     block = find_solved_block(html)
     soup = BeautifulSoup(block, "html.parser")
-    remove_noise_tags(soup)
 
     infos = {}
 
@@ -369,22 +376,22 @@ def get_solved_problem_infos():
         title = ""
         difficulty = ""
 
-        # 표나 카드형 목록 모두 처리하기 위해 가까운 부모부터 검사한다.
         parent = a
-        for _ in range(6):
+        for _ in range(8):
             if parent is None:
                 break
 
+            parent_html = str(parent)
             candidate_title = extract_title_from_container(parent, problem_id)
-            candidate_difficulty = extract_level_from_html(str(parent))
+            candidate_difficulty = extract_level_from_html(parent_html)
 
-            if candidate_title and len(candidate_title) <= 120:
+            if not title and candidate_title and len(candidate_title) <= 120:
                 title = candidate_title
 
-            if candidate_difficulty:
+            if not difficulty and candidate_difficulty:
                 difficulty = candidate_difficulty
 
-            if title:
+            if title and difficulty:
                 break
 
             parent = parent.parent
@@ -417,7 +424,6 @@ def extract_title_from_html(html, problem_id):
     soup = BeautifulSoup(html, "html.parser")
     remove_noise_tags(soup)
 
-    # 구조화된 제목을 먼저 본다. get_text() 전체를 먼저 보면 배지명이 제목 앞에 섞일 수 있다.
     selectors = [
         ('meta[property="og:title"]', "content"),
         ('meta[name="title"]', "content"),
@@ -469,7 +475,8 @@ def extract_title_from_html(html, problem_id):
 
 
 def extract_difficulty_from_html(html, problem_id, title):
-    text = normalize(BeautifulSoup(html, "html.parser").get_text(" ", strip=True))
+    raw_text = BeautifulSoup(html, "html.parser").get_text(" ", strip=True)
+    text = normalize(raw_text)
     marker = f"#{problem_id}"
     index = text.find(marker)
 
@@ -478,7 +485,15 @@ def extract_difficulty_from_html(html, problem_id, title):
         index = text.find(marker)
 
     if index != -1:
-        segment = text[index:index + 500]
+        segment = text[index:index + 700]
+
+        level = extract_level_after_title(segment, title)
+        if level:
+            return level
+
+        level = extract_level_from_text(segment)
+        if level:
+            return level
 
         if title:
             title_index = segment.find(title)
@@ -498,12 +513,7 @@ def extract_difficulty_from_html(html, problem_id, title):
         if m:
             return m.group(1)
 
-    level = extract_level_from_html(html)
-
-    if level:
-        return level
-
-    return extract_level_from_text(text)
+    return extract_level_from_html(html)
 
 
 def get_problem_info(problem_id):
@@ -614,6 +624,7 @@ def get_table(problem_ids, solution_files):
 if __name__ == "__main__":
     solved_problem_ids = get_solved_problem_ids()
     solution_files = collect_solution_files()
+    problem_ids = sorted(set(solved_problem_ids) | set(solution_files))
 
     with open("README.md", "w", encoding="utf-8") as f:
-        f.write(get_header() + get_table(solved_problem_ids, solution_files))
+        f.write(get_header() + get_table(problem_ids, solution_files))
