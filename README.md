@@ -17,6 +17,7 @@
 | [03230](https://jungol.co.kr/problem/3230) | 두 로봇 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./03xxx/3230.cpp) |
 | [03288](https://jungol.co.kr/problem/3288) | 하노이2(4기둥-이동횟수만)(The Tower of Hanoi III) | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./03xxx/3288.cpp) |
 | [03334](https://jungol.co.kr/problem/3334) | 회문 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./03xxx/3334.cpp) |
+| [03428](https://jungol.co.kr/problem/3428) | 등수 찾기(ranking) | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./03xxx/3428.cpp) |
 | [03669](https://jungol.co.kr/problem/3669) | 가장 먼 두 점 1 | <img alt="Platinum 3" src="assets/18.svg" height="24"> | [C++](./03xxx/3669.cpp) |
 | [04053](https://jungol.co.kr/problem/4053) | MooTube | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./04xxx/4053.cpp) |
 | [04225](https://jungol.co.kr/problem/4225) | auto_awesome 스페셜 저지 ax+by=1 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./04xxx/4225.cpp) |
@@ -26,7 +27,7 @@
 | [04827](https://jungol.co.kr/problem/4827) | 영업왕 명석이 (Time is Mooney) | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./04xxx/4827.cpp) |
 | [05038](https://jungol.co.kr/problem/5038) | 쇼핑몰 | <img alt="Ruby 4" src="assets/27.svg" height="24"> | [C++](./05xxx/5038.cpp) |
 | [05043](https://jungol.co.kr/problem/5043) | 서브태스크 자습 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./05xxx/5043.cpp) |
-| [05359](https://jungol.co.kr/problem/5359) | 학문 III (Acowdemia III) | <img alt="Silver 4" src="assets/7.svg" height="24"> | [C++](./05xxx/5359.cpp) |
+| [05359](https://jungol.co.kr/problem/5359) | 학문 III (Acowdemia III) | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./05xxx/5359.cpp) |
 | [05377](https://jungol.co.kr/problem/5377) | 소는 풀을 좋아해 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5377.cpp) |
 | [05461](https://jungol.co.kr/problem/5461) | 숫자구슬(medium) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5461.cpp) |
 | [05539](https://jungol.co.kr/problem/5539) | 서브태스크 연구원과 실험 장비 (주식회사) | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./05xxx/5539.cpp) |
@@ -43,7 +44,6 @@
 | [08445](https://jungol.co.kr/problem/8445) | auto_awesome 스페셜 저지 call_split 서브태스크 C) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./08xxx/8445.cpp) |
 | [08591](https://jungol.co.kr/problem/8591) | 서브태스크 직사각형의 최대 합 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./08xxx/8591.cpp) |
 | [08668](https://jungol.co.kr/problem/8668) | 두루마리 휴지 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./08xxx/8668.cpp) |
-| [08987](https://jungol.co.kr/problem/8987) | 서브태스크 부분 문자열 만들기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8987.cpp) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./10xxx/10454.cpp) |
 | [11191](https://jungol.co.kr/problem/11191) | 슬롯 머신 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./11xxx/11191.cpp) |
 | [11611](https://jungol.co.kr/problem/11611) | auto_awesome 스페셜 저지 발굴 | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./11xxx/11611.cpp) |
