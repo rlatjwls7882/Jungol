@@ -26,9 +26,9 @@
 | [04827](https://jungol.co.kr/problem/4827) | 영업왕 명석이 (Time is Mooney) | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./04xxx/4827.cpp) |
 | [05038](https://jungol.co.kr/problem/5038) | 쇼핑몰 | <img alt="Ruby 4" src="assets/27.svg" height="24"> | [C++](./05xxx/5038.cpp) |
 | [05043](https://jungol.co.kr/problem/5043) | 서브태스크 자습 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./05xxx/5043.cpp) |
+| [05359](https://jungol.co.kr/problem/5359) | 학문 III (Acowdemia III) | <img alt="Silver 4" src="assets/7.svg" height="24"> | [C++](./05xxx/5359.cpp) |
 | [05377](https://jungol.co.kr/problem/5377) | 소는 풀을 좋아해 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5377.cpp) |
 | [05461](https://jungol.co.kr/problem/5461) | 숫자구슬(medium) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5461.cpp) |
-| [05513](https://jungol.co.kr/problem/5513) | 극장 좌석 배치 2 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5513.cpp) |
 | [05539](https://jungol.co.kr/problem/5539) | 서브태스크 연구원과 실험 장비 (주식회사) | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./05xxx/5539.cpp) |
 | [05607](https://jungol.co.kr/problem/5607) | 서브태스크 피자먹고 기분 피자 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5607.cpp) |
 | [05628](https://jungol.co.kr/problem/5628) | 서브태스크 반딧불이 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5628.cpp) |
