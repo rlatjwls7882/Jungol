@@ -43,6 +43,21 @@ TIER = {
 }
 
 TIER_TO_LEVEL = {name.lower(): level for level, name in TIER.items()}
+TIER_GROUP_BASE = {
+    "bronze": 0,
+    "silver": 5,
+    "gold": 10,
+    "platinum": 15,
+    "diamond": 20,
+    "ruby": 25,
+}
+ROMAN_TO_DIVISION = {
+    "i": 1,
+    "ii": 2,
+    "iii": 3,
+    "iv": 4,
+    "v": 5,
+}
 
 # JUNGOL 화면의 Material Symbols 텍스트와 문제 속성 배지는 get_text()에 섞인다.
 # README에는 실제 문제 제목만 남기기 위해 제목 앞쪽에서만 제거한다.
@@ -79,6 +94,8 @@ MATERIAL_ICON_CLASSES = {
 }
 
 LEVEL_PATTERN = r"(?:[1-9]|[1-2]\d|30)"
+DIVISION_PATTERN = r"(?:[1-5]|I|II|III|IV|V)"
+TIER_NAME_PATTERN = rf"(?:Bronze|Silver|Gold|Platinum|Diamond|Ruby)\s+{DIVISION_PATTERN}"
 
 
 def normalize(text):
@@ -147,7 +164,60 @@ def remove_noise_tags(soup):
             tag.decompose()
 
 
-def clean_title(title):
+def tier_name_to_level(tier_name):
+    m = re.fullmatch(
+        r"(Bronze|Silver|Gold|Platinum|Diamond|Ruby)\s+([1-5]|I|II|III|IV|V)",
+        normalize(tier_name),
+        re.I,
+    )
+
+    if not m:
+        return ""
+
+    group = m.group(1).lower()
+    division = m.group(2).lower()
+
+    if division in ROMAN_TO_DIVISION:
+        division = ROMAN_TO_DIVISION[division]
+    else:
+        division = int(division)
+
+    return str(TIER_GROUP_BASE[group] + (6 - division))
+
+
+def remove_trailing_tier(title):
+    while True:
+        new_title = re.sub(
+            rf"\s*(?:[·•|/\\-]\s*)?{TIER_NAME_PATTERN}\s*$",
+            "",
+            title,
+            flags=re.I,
+        ).strip()
+
+        if new_title == title:
+            return title
+
+        title = new_title
+
+
+def remove_problem_prefix(title, problem_id):
+    if problem_id is None:
+        return title
+
+    problem_id = int(problem_id)
+    no = format_problem_no(problem_id)
+    patterns = [
+        rf"^#?{problem_id}\s*(?:정답)?\s*(?:{LEVEL_PATTERN}|\?)?\s+",
+        rf"^#?{no}\s*(?:정답)?\s*(?:{LEVEL_PATTERN}|\?)?\s+",
+    ]
+
+    for pattern in patterns:
+        title = re.sub(pattern, "", title).strip()
+
+    return title
+
+
+def clean_title(title, problem_id=None):
     title = normalize(title)
     title = re.sub(r"\s*-\s*JUNGOL\s*$", "", title, flags=re.I).strip()
     title = re.sub(r"\s*\|\s*JUNGOL\s*$", "", title, flags=re.I).strip()
@@ -155,28 +225,30 @@ def clean_title(title):
     title = re.sub(r"\s+(?:memory|메모리)\s+\S+.*$", "", title, flags=re.I).strip()
     title = re.sub(r"\s+(?:문제|입력|출력|제출|채점)\s+.*$", "", title).strip()
 
-    # '#5539 정답 16 제목'이나 '5539 16 제목' 형태에서 번호와 난이도 제거
-    title = re.sub(rf"^#?\d{{3,6}}\s*(?:정답)?\s*(?:{LEVEL_PATTERN}|\?)?\s+", "", title).strip()
+    # '#5539 정답 16 제목'처럼 실제 문제 번호가 앞에 붙은 경우만 제거한다.
+    # '2048'처럼 숫자로만 된 실제 제목까지 지우지 않도록 임의의 앞자리 숫자는 제거하지 않는다.
+    title = remove_problem_prefix(title, problem_id)
 
     changed = True
     while changed:
-        changed = False
+        old_title = title
+        title = remove_trailing_tier(title)
 
         for prefix in TITLE_PREFIXES:
             pattern = rf"^{re.escape(prefix)}(?:\s+|$)"
-            new_title = re.sub(pattern, "", title, flags=re.I).strip()
-
-            if new_title != title:
-                title = new_title
-                changed = True
+            title = re.sub(pattern, "", title, flags=re.I).strip()
 
         title = re.sub(r"^[-:·•|/]+\s*", "", title).strip()
+        changed = title != old_title
 
     if title in ("", "문제", "JUNGOL"):
         return ""
 
-    if re.fullmatch(r"#?\d{3,6}", title):
-        return ""
+    if problem_id is not None and re.fullmatch(r"#?\d{3,6}", title):
+        number = int(title.lstrip("#"))
+
+        if number == int(problem_id):
+            return ""
 
     return title
 
@@ -196,6 +268,16 @@ def find_solved_block(html):
     end = min(end_candidates) if end_candidates else len(html)
 
     return html[start:end]
+
+
+def extract_level_from_text(text):
+    for m in re.finditer(TIER_NAME_PATTERN, normalize(text), re.I):
+        level = tier_name_to_level(m.group(0))
+
+        if level:
+            return level
+
+    return ""
 
 
 def extract_level_from_html(html):
@@ -224,6 +306,16 @@ def extract_level_from_html(html):
             if level is not None:
                 return str(level)
 
+            level = tier_name_to_level(value)
+
+            if level:
+                return level
+
+    level = extract_level_from_text(soup.get_text(" ", strip=True))
+
+    if level:
+        return level
+
     return ""
 
 
@@ -245,12 +337,12 @@ def extract_title_from_container(container, problem_id):
         if not m:
             continue
 
-        title = clean_title(m.group(1))
+        title = clean_title(m.group(1), problem_id)
 
         if title:
             return title
 
-    return clean_title(text)
+    return clean_title(text, problem_id)
 
 
 def get_solved_problem_infos():
@@ -292,7 +384,7 @@ def get_solved_problem_infos():
             if candidate_difficulty:
                 difficulty = candidate_difficulty
 
-            if title or difficulty:
+            if title:
                 break
 
             parent = parent.parent
@@ -336,13 +428,13 @@ def extract_title_from_html(html, problem_id):
     for selector, attr in selectors:
         for tag in soup.select(selector):
             raw = tag.get(attr, "") if attr else tag.get_text(" ", strip=True)
-            title = clean_title(raw)
+            title = clean_title(raw, problem_id)
 
             if title:
                 return title
 
     if soup.title and soup.title.string:
-        title = clean_title(soup.title.string)
+        title = clean_title(soup.title.string, problem_id)
 
         if title:
             return title
@@ -368,7 +460,7 @@ def extract_title_from_html(html, problem_id):
             m = re.search(pattern, segment, re.I)
 
             if m:
-                title = clean_title(m.group(1))
+                title = clean_title(m.group(1), problem_id)
 
                 if title:
                     return title
@@ -406,7 +498,12 @@ def extract_difficulty_from_html(html, problem_id, title):
         if m:
             return m.group(1)
 
-    return extract_level_from_html(html)
+    level = extract_level_from_html(html)
+
+    if level:
+        return level
+
+    return extract_level_from_text(text)
 
 
 def get_problem_info(problem_id):
@@ -430,7 +527,7 @@ def get_problem_info(problem_id):
     except Exception:
         pass
 
-    title = clean_title(title)
+    title = clean_title(title, problem_id)
 
     INFO_CACHE[problem_id] = {
         "title": title,
