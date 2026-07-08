@@ -6,6 +6,7 @@
 | [00501](https://jungol.co.kr/problem/501) | 출력 - 자가진단1 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/501.cpp) |
 | [00502](https://jungol.co.kr/problem/502) | 출력 - 자가진단2 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/502.cpp) |
 | [00503](https://jungol.co.kr/problem/503) | 출력 - 자가진단3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/503.cpp) |
+| [00504](https://jungol.co.kr/problem/504) | 출력 - 자가진단4 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/504.cpp) |
 | [01000](https://jungol.co.kr/problem/1000) | 두 정수 더하기 (A+B) | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./01xxx/1000.cpp) |
 | [01001](https://jungol.co.kr/problem/1001) | 강아지와 병아리 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./01xxx/1001.cpp) |
 | [01002](https://jungol.co.kr/problem/1002) | 최대공약수, 최소공배수 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./01xxx/1002.cpp) |
