@@ -4,6 +4,8 @@
 |:---|:---|:---:|:---:|
 | [00101](https://jungol.co.kr/problem/101) | 출력 - 형성평가1 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/101.cpp) |
 | [00501](https://jungol.co.kr/problem/501) | 출력 - 자가진단1 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/501.cpp) |
+| [00502](https://jungol.co.kr/problem/502) | 출력 - 자가진단2 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/502.cpp) |
+| [00503](https://jungol.co.kr/problem/503) | 출력 - 자가진단3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/503.cpp) |
 | [01000](https://jungol.co.kr/problem/1000) | 두 정수 더하기 (A+B) | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./01xxx/1000.cpp) |
 | [01001](https://jungol.co.kr/problem/1001) | 강아지와 병아리 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./01xxx/1001.cpp) |
 | [01002](https://jungol.co.kr/problem/1002) | 최대공약수, 최소공배수 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./01xxx/1002.cpp) |
@@ -75,6 +77,8 @@
 | [08987](https://jungol.co.kr/problem/8987) | 부분 문자열 만들기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8987.cpp) |
 | [09001](https://jungol.co.kr/problem/9001) | 출력 - 연습문제1 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9001.cpp) |
 | [09002](https://jungol.co.kr/problem/9002) | 출력 - 연습문제2 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9002.cpp) |
+| [09003](https://jungol.co.kr/problem/9003) | 출력 - 연습문제3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9003.cpp) |
+| [09004](https://jungol.co.kr/problem/9004) | 출력 - 연습문제4 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9004.cpp) |
 | [09278](https://jungol.co.kr/problem/9278) | 반복제어문1 - 자가진단 6-3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [Python](./09xxx/9278.py) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./10xxx/10454.cpp) |
 | [11191](https://jungol.co.kr/problem/11191) | 슬롯 머신 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./11xxx/11191.cpp) |
