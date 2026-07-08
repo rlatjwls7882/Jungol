@@ -66,8 +66,8 @@
 | [08840](https://jungol.co.kr/problem/8840) | 칩 교환 | <img alt="Platinum 3" src="assets/18.svg" height="24"> | [C++](./08xxx/8840.cpp) |
 | [08946](https://jungol.co.kr/problem/8946) | 분수 (Fraction) | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./08xxx/8946.cpp) |
 | [08987](https://jungol.co.kr/problem/8987) | 부분 문자열 만들기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8987.cpp) |
-| [09001](https://jungol.co.kr/problem/9001) | 출력 - 연습문제1 · Unranked | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9001.cpp) |
-| [09278](https://jungol.co.kr/problem/9278) | 반복제어문1 - 자가진단 6-3 · Unranked | <img alt="Unrated" src="assets/0.svg" height="24"> | [Python](./09xxx/9278.py) |
+| [09001](https://jungol.co.kr/problem/9001) | 출력 - 연습문제1 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9001.cpp) |
+| [09278](https://jungol.co.kr/problem/9278) | 반복제어문1 - 자가진단 6-3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [Python](./09xxx/9278.py) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./10xxx/10454.cpp) |
 | [11191](https://jungol.co.kr/problem/11191) | 슬롯 머신 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./11xxx/11191.cpp) |
 | [11611](https://jungol.co.kr/problem/11611) | 발굴 | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./11xxx/11611.cpp) |
@@ -78,4 +78,4 @@
 | [12429](https://jungol.co.kr/problem/12429) | SC ON 찾기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./12xxx/12429.cpp) |
 | [14772](https://jungol.co.kr/problem/14772) | 안도르의 역습 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./14xxx/14772.cpp) |
 | [15643](https://jungol.co.kr/problem/15643) | 초등수학 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./15xxx/15643.cpp) |
-| [19527](https://jungol.co.kr/problem/19527) | 피보나치 빈도 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./19xxx/19527.cpp) |
+| [19527](https://jungol.co.kr/problem/19527) | 로드 중... | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./19xxx/19527.cpp) |
