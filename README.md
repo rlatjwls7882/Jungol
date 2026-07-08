@@ -75,6 +75,7 @@
 | [07984](https://jungol.co.kr/problem/7984) | 점대칭도형 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./07xxx/7984.cpp) |
 | [08057](https://jungol.co.kr/problem/8057) | 직선과 두 점 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./08xxx/8057.cpp) |
 | [08111](https://jungol.co.kr/problem/8111) | 헤어스타일이 비슷한 고슴도치 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./08xxx/8111.cpp) |
+| [08141](https://jungol.co.kr/problem/8141) | 정수 팰린드롬 돌게임 | <img alt="Platinum 4" src="assets/17.svg" height="24"> | [C++](./08xxx/8141.cpp) |
 | [08148](https://jungol.co.kr/problem/8148) | 약속 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8148.cpp) |
 | [08445](https://jungol.co.kr/problem/8445) | C) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./08xxx/8445.cpp) |
 | [08551](https://jungol.co.kr/problem/8551) | Tutorial : STL Sort 1 ( 기본 사용법 ) | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./08xxx/8551.cpp) |
