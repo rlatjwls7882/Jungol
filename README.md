@@ -81,6 +81,7 @@
 | [06326](https://jungol.co.kr/problem/6326) | 백열등 2 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./06xxx/6326.cpp) |
 | [07021](https://jungol.co.kr/problem/7021) | 등교 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./07xxx/7021.cpp) |
 | [07984](https://jungol.co.kr/problem/7984) | 점대칭도형 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./07xxx/7984.cpp) |
+| [08033](https://jungol.co.kr/problem/8033) | 체육은 수학과목 입니다 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./08xxx/8033.cpp) |
 | [08057](https://jungol.co.kr/problem/8057) | 직선과 두 점 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./08xxx/8057.cpp) |
 | [08111](https://jungol.co.kr/problem/8111) | 헤어스타일이 비슷한 고슴도치 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./08xxx/8111.cpp) |
 | [08141](https://jungol.co.kr/problem/8141) | 정수 팰린드롬 돌게임 | <img alt="Platinum 4" src="assets/17.svg" height="24"> | [C++](./08xxx/8141.cpp) |
@@ -103,6 +104,7 @@
 | [09007](https://jungol.co.kr/problem/9007) | 출력 - 연습문제7 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9007.cpp) |
 | [09008](https://jungol.co.kr/problem/9008) | 출력 - 연습문제8 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9008.cpp) |
 | [09278](https://jungol.co.kr/problem/9278) | 반복제어문1 - 자가진단 6-3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [Python](./09xxx/9278.py) |
+| [09750](https://jungol.co.kr/problem/9750) | 체육은 코딩과목 입니다 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./09xxx/9750.cpp) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./10xxx/10454.cpp) |
 | [11191](https://jungol.co.kr/problem/11191) | 슬롯 머신 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./11xxx/11191.cpp) |
 | [11611](https://jungol.co.kr/problem/11611) | 발굴 | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./11xxx/11611.cpp) |
