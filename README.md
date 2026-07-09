@@ -44,6 +44,7 @@
 | [02358](https://jungol.co.kr/problem/2358) | 트리의 중앙 | <img alt="Silver 2" src="assets/9.svg" height="24"> | [C++](./02xxx/2358.cpp) |
 | [02440](https://jungol.co.kr/problem/2440) | 설탕 배달(secer) | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./02xxx/2440.cpp) |
 | [02736](https://jungol.co.kr/problem/2736) | 버블정렬(중) | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2736.cpp) |
+| [02809](https://jungol.co.kr/problem/2809) | 약수 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2809.cpp) |
 | [02859](https://jungol.co.kr/problem/2859) | 컬러볼 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2859.cpp) |
 | [03018](https://jungol.co.kr/problem/3018) | 그래프 태우기 | <img alt="Diamond 3" src="assets/23.svg" height="24"> | [C++](./03xxx/3018.cpp) |
 | [03155](https://jungol.co.kr/problem/3155) | 오렌지 출하 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./03xxx/3155.cpp) |
