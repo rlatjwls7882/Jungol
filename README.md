@@ -90,6 +90,7 @@
 | [08141](https://jungol.co.kr/problem/8141) | 정수 팰린드롬 돌게임 | <img alt="Platinum 4" src="assets/17.svg" height="24"> | [C++](./08xxx/8141.cpp) |
 | [08148](https://jungol.co.kr/problem/8148) | 약속 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8148.cpp) |
 | [08445](https://jungol.co.kr/problem/8445) | C) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./08xxx/8445.cpp) |
+| [08528](https://jungol.co.kr/problem/8528) | Tutorial : STL Multiset | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./08xxx/8528.cpp) |
 | [08551](https://jungol.co.kr/problem/8551) | Tutorial : STL Sort 1 ( 기본 사용법 ) | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./08xxx/8551.cpp) |
 | [08576](https://jungol.co.kr/problem/8576) | Tutorial : 구조체 연산자 오버로딩 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./08xxx/8576.cpp) |
 | [08591](https://jungol.co.kr/problem/8591) | 직사각형의 최대 합 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./08xxx/8591.cpp) |
