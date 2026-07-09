@@ -20,6 +20,7 @@
 | [01002](https://jungol.co.kr/problem/1002) | 최대공약수, 최소공배수 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./01xxx/1002.cpp) |
 | [01054](https://jungol.co.kr/problem/1054) | 제곱근 | <img alt="Diamond 4" src="assets/22.svg" height="24"> | [C++](./01xxx/1054.cpp) |
 | [01060](https://jungol.co.kr/problem/1060) | 최소비용신장트리 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1060.cpp) |
+| [01071](https://jungol.co.kr/problem/1071) | 약수와 배수 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./01xxx/1071.cpp) |
 | [01112](https://jungol.co.kr/problem/1112) | 줄자접기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./01xxx/1112.cpp) |
 | [01182](https://jungol.co.kr/problem/1182) | 벽타기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1182.cpp) |
 | [01246](https://jungol.co.kr/problem/1246) | 성적 바꾸기 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./01xxx/1246.cpp) |
