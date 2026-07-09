@@ -88,6 +88,7 @@
 | [07021](https://jungol.co.kr/problem/7021) | 등교 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./07xxx/7021.cpp) |
 | [07984](https://jungol.co.kr/problem/7984) | 점대칭도형 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./07xxx/7984.cpp) |
 | [08033](https://jungol.co.kr/problem/8033) | 체육은 수학과목 입니다 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./08xxx/8033.cpp) |
+| [08039](https://jungol.co.kr/problem/8039) | 실시간 투표현황 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8039.cpp) |
 | [08057](https://jungol.co.kr/problem/8057) | 직선과 두 점 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./08xxx/8057.cpp) |
 | [08111](https://jungol.co.kr/problem/8111) | 헤어스타일이 비슷한 고슴도치 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./08xxx/8111.cpp) |
 | [08141](https://jungol.co.kr/problem/8141) | 정수 팰린드롬 돌게임 | <img alt="Platinum 4" src="assets/17.svg" height="24"> | [C++](./08xxx/8141.cpp) |
