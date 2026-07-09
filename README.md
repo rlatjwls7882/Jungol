@@ -31,6 +31,7 @@
 | [01402](https://jungol.co.kr/problem/1402) | 약수 구하기 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./01xxx/1402.cpp) |
 | [01430](https://jungol.co.kr/problem/1430) | 숫자의 개수 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./01xxx/1430.cpp) |
 | [01514](https://jungol.co.kr/problem/1514) | 타일 채우기 | <img alt="Silver 5" src="assets/6.svg" height="24"> | [C++](./01xxx/1514.cpp) |
+| [01570](https://jungol.co.kr/problem/1570) | 중앙값 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1570.cpp) |
 | [01658](https://jungol.co.kr/problem/1658) | 최대공약수와최소공배수 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./01xxx/1658.cpp) |
 | [01692](https://jungol.co.kr/problem/1692) | 곱셈 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./01xxx/1692.cpp) |
 | [01776](https://jungol.co.kr/problem/1776) | 숫자 만들기 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1776.cpp) |
