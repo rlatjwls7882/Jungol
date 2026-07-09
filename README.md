@@ -55,6 +55,7 @@
 | [03230](https://jungol.co.kr/problem/3230) | 두 로봇 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./03xxx/3230.cpp) |
 | [03288](https://jungol.co.kr/problem/3288) | 하노이2(4기둥-이동횟수만)(The Tower of Hanoi III) | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./03xxx/3288.cpp) |
 | [03334](https://jungol.co.kr/problem/3334) | 회문 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./03xxx/3334.cpp) |
+| [03337](https://jungol.co.kr/problem/3337) | 쇼핑몰 | <img alt="Gold 1" src="assets/15.svg" height="24"> | [C++](./03xxx/3337.cpp) |
 | [03428](https://jungol.co.kr/problem/3428) | 등수 찾기(ranking) | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./03xxx/3428.cpp) |
 | [03669](https://jungol.co.kr/problem/3669) | 가장 먼 두 점 1 | <img alt="Platinum 3" src="assets/18.svg" height="24"> | [C++](./03xxx/3669.cpp) |
 | [04053](https://jungol.co.kr/problem/4053) | MooTube | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./04xxx/4053.cpp) |
