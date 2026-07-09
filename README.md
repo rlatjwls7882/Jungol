@@ -25,6 +25,7 @@
 | [01182](https://jungol.co.kr/problem/1182) | 벽타기 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1182.cpp) |
 | [01246](https://jungol.co.kr/problem/1246) | 성적 바꾸기 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./01xxx/1246.cpp) |
 | [01291](https://jungol.co.kr/problem/1291) | 구구단 4 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./01xxx/1291.cpp) |
+| [01318](https://jungol.co.kr/problem/1318) | 못생긴 수 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1318.cpp) |
 | [01341](https://jungol.co.kr/problem/1341) | 구구단 3 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./01xxx/1341.cpp) |
 | [01350](https://jungol.co.kr/problem/1350) | 최대신장트리 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1350.cpp) |
 | [01364](https://jungol.co.kr/problem/1364) | 방면적 넓히기(The Castle) | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1364.cpp) |
@@ -40,7 +41,7 @@
 | [01840](https://jungol.co.kr/problem/1840) | 치즈 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1840.cpp) |
 | [01871](https://jungol.co.kr/problem/1871) | 줄세우기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1871.cpp) |
 | [01895](https://jungol.co.kr/problem/1895) | 조명장식(Illumination) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1895.cpp) |
-| [01897](https://jungol.co.kr/problem/1897) | 자리배치0 | <img alt="Diamond 1" src="assets/25.svg" height="24"> | [C++](./01xxx/1897.cpp) |
+| [01897](https://jungol.co.kr/problem/1897) | 자리배치0 | <img alt="Ruby 5" src="assets/26.svg" height="24"> | [C++](./01xxx/1897.cpp) |
 | [02082](https://jungol.co.kr/problem/2082) | 힙정렬2 (Heap_Sort) | <img alt="Silver 2" src="assets/9.svg" height="24"> | [C++](./02xxx/2082.cpp) |
 | [02107](https://jungol.co.kr/problem/2107) | 축구 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2107.cpp) |
 | [02117](https://jungol.co.kr/problem/2117) | 야바위 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2117.cpp) |
