@@ -69,6 +69,7 @@
 | [05461](https://jungol.co.kr/problem/5461) | 숫자구슬(medium) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5461.cpp) |
 | [05513](https://jungol.co.kr/problem/5513) | 극장 좌석 배치 2 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5513.cpp) |
 | [05539](https://jungol.co.kr/problem/5539) | 연구원과 실험 장비 (주식회사) | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./05xxx/5539.cpp) |
+| [05545](https://jungol.co.kr/problem/5545) | 연필 공장 | <img alt="Silver 5" src="assets/6.svg" height="24"> | [C++](./05xxx/5545.cpp) |
 | [05607](https://jungol.co.kr/problem/5607) | 피자먹고 기분 피자 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5607.cpp) |
 | [05628](https://jungol.co.kr/problem/5628) | 반딧불이 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5628.cpp) |
 | [05647](https://jungol.co.kr/problem/5647) | 크림빵 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./05xxx/5647.cpp) |
