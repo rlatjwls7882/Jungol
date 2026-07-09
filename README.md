@@ -57,6 +57,7 @@
 | [04993](https://jungol.co.kr/problem/4993) | 일진법 | <img alt="Ruby 1" src="assets/30.svg" height="24"> | [C++](./04xxx/4993.cpp) |
 | [05038](https://jungol.co.kr/problem/5038) | 쇼핑몰 | <img alt="Ruby 4" src="assets/27.svg" height="24"> | [C++](./05xxx/5038.cpp) |
 | [05043](https://jungol.co.kr/problem/5043) | 자습 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./05xxx/5043.cpp) |
+| [05196](https://jungol.co.kr/problem/5196) | 카드 바꾸기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5196.cpp) |
 | [05359](https://jungol.co.kr/problem/5359) | 학문 III (Acowdemia III) | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./05xxx/5359.cpp) |
 | [05377](https://jungol.co.kr/problem/5377) | 소는 풀을 좋아해 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./05xxx/5377.cpp) |
 | [05461](https://jungol.co.kr/problem/5461) | 숫자구슬(medium) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5461.cpp) |
