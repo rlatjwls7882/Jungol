@@ -41,6 +41,7 @@
 | [01871](https://jungol.co.kr/problem/1871) | 줄세우기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1871.cpp) |
 | [01895](https://jungol.co.kr/problem/1895) | 조명장식(Illumination) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1895.cpp) |
 | [01897](https://jungol.co.kr/problem/1897) | 자리배치0 | <img alt="Diamond 2" src="assets/24.svg" height="24"> | [C++](./01xxx/1897.cpp) |
+| [02082](https://jungol.co.kr/problem/2082) | 힙정렬2 (Heap_Sort) | <img alt="Silver 2" src="assets/9.svg" height="24"> | [C++](./02xxx/2082.cpp) |
 | [02107](https://jungol.co.kr/problem/2107) | 축구 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2107.cpp) |
 | [02117](https://jungol.co.kr/problem/2117) | 야바위 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2117.cpp) |
 | [02358](https://jungol.co.kr/problem/2358) | 트리의 중앙 | <img alt="Silver 2" src="assets/9.svg" height="24"> | [C++](./02xxx/2358.cpp) |
