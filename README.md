@@ -46,7 +46,8 @@
 | [01897](https://jungol.co.kr/problem/1897) | 자리배치0 | <img alt="Ruby 5" src="assets/26.svg" height="24"> | [C++](./01xxx/1897.cpp) |
 | [02082](https://jungol.co.kr/problem/2082) | 힙정렬2 (Heap_Sort) | <img alt="Silver 2" src="assets/9.svg" height="24"> | [C++](./02xxx/2082.cpp) |
 | [02107](https://jungol.co.kr/problem/2107) | 축구 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2107.cpp) |
-| [02117](https://jungol.co.kr/problem/2117) | 로드 중... | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./02xxx/2117.cpp) |
+| [02117](https://jungol.co.kr/problem/2117) | 야바위 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2117.cpp) |
+| [02194](https://jungol.co.kr/problem/2194) | 요플레 공장 | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./02xxx/2194.cpp) |
 | [02358](https://jungol.co.kr/problem/2358) | 트리의 중앙 | <img alt="Silver 2" src="assets/9.svg" height="24"> | [C++](./02xxx/2358.cpp) |
 | [02440](https://jungol.co.kr/problem/2440) | 설탕 배달(secer) | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./02xxx/2440.cpp) |
 | [02736](https://jungol.co.kr/problem/2736) | 버블정렬(중) | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2736.cpp) |
