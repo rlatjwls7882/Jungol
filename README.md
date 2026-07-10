@@ -23,6 +23,7 @@
 | [01071](https://jungol.co.kr/problem/1071) | 약수와 배수 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./01xxx/1071.cpp) |
 | [01112](https://jungol.co.kr/problem/1112) | 줄자접기 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./01xxx/1112.cpp) |
 | [01182](https://jungol.co.kr/problem/1182) | 벽타기 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1182.cpp) |
+| [01190](https://jungol.co.kr/problem/1190) | 모두더하기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1190.cpp) |
 | [01246](https://jungol.co.kr/problem/1246) | 성적 바꾸기 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./01xxx/1246.cpp) |
 | [01291](https://jungol.co.kr/problem/1291) | 구구단 4 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./01xxx/1291.cpp) |
 | [01318](https://jungol.co.kr/problem/1318) | 못생긴 수 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1318.cpp) |
@@ -44,6 +45,7 @@
 | [01871](https://jungol.co.kr/problem/1871) | 줄세우기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1871.cpp) |
 | [01895](https://jungol.co.kr/problem/1895) | 조명장식(Illumination) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1895.cpp) |
 | [01897](https://jungol.co.kr/problem/1897) | 자리배치0 | <img alt="Ruby 5" src="assets/26.svg" height="24"> | [C++](./01xxx/1897.cpp) |
+| [01929](https://jungol.co.kr/problem/1929) | 책꽂이 만들기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1929.cpp) |
 | [02082](https://jungol.co.kr/problem/2082) | 힙정렬2 (Heap_Sort) | <img alt="Silver 2" src="assets/9.svg" height="24"> | [C++](./02xxx/2082.cpp) |
 | [02107](https://jungol.co.kr/problem/2107) | 축구 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2107.cpp) |
 | [02117](https://jungol.co.kr/problem/2117) | 야바위 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2117.cpp) |
