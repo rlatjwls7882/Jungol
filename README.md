@@ -46,7 +46,7 @@
 | [01897](https://jungol.co.kr/problem/1897) | 자리배치0 | <img alt="Ruby 5" src="assets/26.svg" height="24"> | [C++](./01xxx/1897.cpp) |
 | [02082](https://jungol.co.kr/problem/2082) | 힙정렬2 (Heap_Sort) | <img alt="Silver 2" src="assets/9.svg" height="24"> | [C++](./02xxx/2082.cpp) |
 | [02107](https://jungol.co.kr/problem/2107) | 축구 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2107.cpp) |
-| [02117](https://jungol.co.kr/problem/2117) | 야바위 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2117.cpp) |
+| [02117](https://jungol.co.kr/problem/2117) | 로드 중... | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./02xxx/2117.cpp) |
 | [02358](https://jungol.co.kr/problem/2358) | 트리의 중앙 | <img alt="Silver 2" src="assets/9.svg" height="24"> | [C++](./02xxx/2358.cpp) |
 | [02440](https://jungol.co.kr/problem/2440) | 설탕 배달(secer) | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./02xxx/2440.cpp) |
 | [02736](https://jungol.co.kr/problem/2736) | 버블정렬(중) | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2736.cpp) |
@@ -66,6 +66,7 @@
 | [04380](https://jungol.co.kr/problem/4380) | 피곤한 귀가길 | <img alt="Gold 1" src="assets/15.svg" height="24"> | [C++](./04xxx/4380.cpp) |
 | [04407](https://jungol.co.kr/problem/4407) | 아름다운 공원 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./04xxx/4407.cpp) |
 | [04413](https://jungol.co.kr/problem/4413) | 이진 암호화 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./04xxx/4413.cpp) |
+| [04520](https://jungol.co.kr/problem/4520) | 햄버거 분배 | <img alt="Silver 4" src="assets/7.svg" height="24"> | [C++](./04xxx/4520.cpp) |
 | [04637](https://jungol.co.kr/problem/4637) | Tutorial: STL Set 1 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./04xxx/4637.cpp) |
 | [04638](https://jungol.co.kr/problem/4638) | Tutorial: STL Set 2 | <img alt="Silver 3" src="assets/8.svg" height="24"> | [C++](./04xxx/4638.cpp) |
 | [04639](https://jungol.co.kr/problem/4639) | Tutorial: STL Set 3 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./04xxx/4639.cpp) |
