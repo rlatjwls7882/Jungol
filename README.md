@@ -123,6 +123,7 @@
 | [09006](https://jungol.co.kr/problem/9006) | 출력 - 연습문제6 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9006.cpp) |
 | [09007](https://jungol.co.kr/problem/9007) | 출력 - 연습문제7 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9007.cpp) |
 | [09008](https://jungol.co.kr/problem/9008) | 출력 - 연습문제8 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9008.cpp) |
+| [09009](https://jungol.co.kr/problem/9009) | 입력 - 연습문제1 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9009.cpp) |
 | [09278](https://jungol.co.kr/problem/9278) | 반복제어문1 - 자가진단 6-3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [Python](./09xxx/9278.py) |
 | [09750](https://jungol.co.kr/problem/9750) | 체육은 코딩과목 입니다 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./09xxx/9750.cpp) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./10xxx/10454.cpp) |
