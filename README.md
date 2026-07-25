@@ -96,6 +96,7 @@
 | [05937](https://jungol.co.kr/problem/5937) | 두 상단 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./05xxx/5937.cpp) |
 | [06070](https://jungol.co.kr/problem/6070) | 사탕 지팡이 축제 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./06xxx/6070.cpp) |
 | [06326](https://jungol.co.kr/problem/6326) | 백열등 2 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./06xxx/6326.cpp) |
+| [07000](https://jungol.co.kr/problem/7000) | 식량 창고 | <img alt="Platinum 5" src="assets/16.svg" height="24"> | [C++](./07xxx/7000.cpp) |
 | [07021](https://jungol.co.kr/problem/7021) | 등교 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./07xxx/7021.cpp) |
 | [07984](https://jungol.co.kr/problem/7984) | 점대칭도형 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./07xxx/7984.cpp) |
 | [08033](https://jungol.co.kr/problem/8033) | 체육은 수학과목 입니다 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./08xxx/8033.cpp) |
