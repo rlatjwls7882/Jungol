@@ -7,7 +7,7 @@
 | [00103](https://jungol.co.kr/problem/103) | 출력 - 형성평가3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/103.cpp) |
 | [00104](https://jungol.co.kr/problem/104) | 출력 - 형성평가4 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/104.cpp) |
 | [00105](https://jungol.co.kr/problem/105) | 출력 - 형성평가5 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/105.cpp) |
-| [00501](https://jungol.co.kr/problem/501) | 출력 - 자가진단1 | <img alt="Ruby 1" src="assets/30.svg" height="24"> | [C++](./00xxx/501.cpp) |
+| [00501](https://jungol.co.kr/problem/501) | 출력 - 자가진단1 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/501.cpp) |
 | [00502](https://jungol.co.kr/problem/502) | 출력 - 자가진단2 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/502.cpp) |
 | [00503](https://jungol.co.kr/problem/503) | 출력 - 자가진단3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/503.cpp) |
 | [00504](https://jungol.co.kr/problem/504) | 출력 - 자가진단4 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./00xxx/504.cpp) |
@@ -37,7 +37,7 @@
 | [01514](https://jungol.co.kr/problem/1514) | 타일 채우기 | <img alt="Silver 5" src="assets/6.svg" height="24"> | [C++](./01xxx/1514.cpp) |
 | [01539](https://jungol.co.kr/problem/1539) | 가장높은탑쌓기 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1539.cpp) |
 | [01570](https://jungol.co.kr/problem/1570) | 중앙값 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./01xxx/1570.cpp) |
-| [01618](https://jungol.co.kr/problem/1618) | 3제곱수의 조합 | <img alt="Ruby 5" src="assets/26.svg" height="24"> | [C++](./01xxx/1618.cpp) |
+| [01618](https://jungol.co.kr/problem/1618) | 3제곱수의 조합 | <img alt="Ruby 3" src="assets/28.svg" height="24"> | [C++](./01xxx/1618.cpp) |
 | [01658](https://jungol.co.kr/problem/1658) | 최대공약수와최소공배수 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./01xxx/1658.cpp) |
 | [01692](https://jungol.co.kr/problem/1692) | 곱셈 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./01xxx/1692.cpp) |
 | [01776](https://jungol.co.kr/problem/1776) | 숫자 만들기 | <img alt="Gold 3" src="assets/13.svg" height="24"> | [C++](./01xxx/1776.cpp) |
@@ -52,7 +52,7 @@
 | [02107](https://jungol.co.kr/problem/2107) | 축구 | <img alt="Bronze 5" src="assets/1.svg" height="24"> | [C++](./02xxx/2107.cpp) |
 | [02117](https://jungol.co.kr/problem/2117) | 야바위 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2117.cpp) |
 | [02194](https://jungol.co.kr/problem/2194) | 요플레 공장 | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./02xxx/2194.cpp) |
-| [02358](https://jungol.co.kr/problem/2358) | 트리의 중앙 | <img alt="Silver 1" src="assets/10.svg" height="24"> | [C++](./02xxx/2358.cpp) |
+| [02358](https://jungol.co.kr/problem/2358) | 트리의 중앙 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./02xxx/2358.cpp) |
 | [02440](https://jungol.co.kr/problem/2440) | 설탕 배달(secer) | <img alt="Silver 4" src="assets/7.svg" height="24"> | [C++](./02xxx/2440.cpp) |
 | [02736](https://jungol.co.kr/problem/2736) | 버블정렬(중) | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./02xxx/2736.cpp) |
 | [02809](https://jungol.co.kr/problem/2809) | 약수 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./02xxx/2809.cpp) |
@@ -103,7 +103,7 @@
 | [08039](https://jungol.co.kr/problem/8039) | 실시간 투표현황 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8039.cpp) |
 | [08057](https://jungol.co.kr/problem/8057) | 직선과 두 점 | <img alt="Silver 4" src="assets/7.svg" height="24"> | [C++](./08xxx/8057.cpp) |
 | [08111](https://jungol.co.kr/problem/8111) | 헤어스타일이 비슷한 고슴도치 | <img alt="Gold 2" src="assets/14.svg" height="24"> | [C++](./08xxx/8111.cpp) |
-| [08141](https://jungol.co.kr/problem/8141) | 정수 팰린드롬 돌게임 | <img alt="Diamond 5" src="assets/21.svg" height="24"> | [C++](./08xxx/8141.cpp) |
+| [08141](https://jungol.co.kr/problem/8141) | 정수 팰린드롬 돌게임 | <img alt="Diamond 4" src="assets/22.svg" height="24"> | [C++](./08xxx/8141.cpp) |
 | [08148](https://jungol.co.kr/problem/8148) | 약속 | <img alt="Silver 2" src="assets/9.svg" height="24"> | [C++](./08xxx/8148.cpp) |
 | [08445](https://jungol.co.kr/problem/8445) | C) | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./08xxx/8445.cpp) |
 | [08468](https://jungol.co.kr/problem/8468) | 명당 | <img alt="Gold 5" src="assets/11.svg" height="24"> | [C++](./08xxx/8468.cpp) |
@@ -127,17 +127,18 @@
 | [09008](https://jungol.co.kr/problem/9008) | 출력 - 연습문제8 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9008.cpp) |
 | [09009](https://jungol.co.kr/problem/9009) | 입력 - 연습문제1 | <img alt="Unrated" src="assets/0.svg" height="24"> | [C++](./09xxx/9009.cpp) |
 | [09278](https://jungol.co.kr/problem/9278) | 반복제어문1 - 자가진단 6-3 | <img alt="Unrated" src="assets/0.svg" height="24"> | [Python](./09xxx/9278.py) |
-| [09750](https://jungol.co.kr/problem/9750) | 체육은 코딩과목 입니다 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./09xxx/9750.cpp) |
+| [09750](https://jungol.co.kr/problem/9750) | 체육은 코딩과목 입니다 | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./09xxx/9750.cpp) |
 | [10454](https://jungol.co.kr/problem/10454) | 침입자 따돌리기 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./10xxx/10454.cpp) |
 | [11191](https://jungol.co.kr/problem/11191) | 슬롯 머신 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./11xxx/11191.cpp) |
 | [11611](https://jungol.co.kr/problem/11611) | 발굴 | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./11xxx/11611.cpp) |
-| [12012](https://jungol.co.kr/problem/12012) | 2048 | <img alt="Silver 5" src="assets/6.svg" height="24"> | [C++](./12xxx/12012.cpp) |
+| [12012](https://jungol.co.kr/problem/12012) | 2048 | <img alt="Silver 4" src="assets/7.svg" height="24"> | [C++](./12xxx/12012.cpp) |
 | [12205](https://jungol.co.kr/problem/12205) | 포화이진트리(perfect binary tree)의 중위순회 | <img alt="Silver 4" src="assets/7.svg" height="24"> | [C++](./12xxx/12205.cpp) |
 | [12260](https://jungol.co.kr/problem/12260) | Contest Title | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./12xxx/12260.cpp) |
 | [12338](https://jungol.co.kr/problem/12338) | 구구단 1 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./12xxx/12338.cpp) |
 | [12422](https://jungol.co.kr/problem/12422) | 구구단 2 | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./12xxx/12422.cpp) |
 | [12429](https://jungol.co.kr/problem/12429) | SC ON 찾기 | <img alt="Gold 4" src="assets/12.svg" height="24"> | [C++](./12xxx/12429.cpp) |
-| [14772](https://jungol.co.kr/problem/14772) | 안도르의 역습 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./14xxx/14772.cpp) |
+| [14772](https://jungol.co.kr/problem/14772) | 안도르의 역습 | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./14xxx/14772.cpp) |
 | [15643](https://jungol.co.kr/problem/15643) | 초등수학 | <img alt="Bronze 3" src="assets/3.svg" height="24"> | [C++](./15xxx/15643.cpp) |
-| [19527](https://jungol.co.kr/problem/19527) | 피보나치 빈도 | <img alt="Bronze 1" src="assets/5.svg" height="24"> | [C++](./19xxx/19527.cpp) |
+| [19527](https://jungol.co.kr/problem/19527) | 피보나치 빈도 | <img alt="Silver 5" src="assets/6.svg" height="24"> | [C++](./19xxx/19527.cpp) |
 | [21041](https://jungol.co.kr/problem/21041) | 제4회 AGCU Cup | <img alt="Bronze 4" src="assets/2.svg" height="24"> | [C++](./21xxx/21041.cpp) |
+| [21045](https://jungol.co.kr/problem/21045) | 창의적인 | <img alt="Bronze 2" src="assets/4.svg" height="24"> | [C++](./21xxx/21045.cpp) |
