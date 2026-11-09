@@ -1,15 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
+typedef long long ll;
 
 int main() {
     cin.tie(0)->sync_with_stdio(0);
-    int n,m;cin>>n>>m;
-    n=1<<n;m=1<<m;
-    int sum=n*m;
-    while(n>1||m>1){
-        n=n+1>>1;
-        m=m+1>>1;
-        sum+=n*m;
+    ll n;cin>>n;
+    if(n<=2){
+        cout<<"2 1 1\n2 1 1";
+    }else if(n==3){
+        cout<<"3 2 1\n3 2 1";
+    }else{
+        cout<<"3 "<<n/3*3<<" 2\n";
+        cout<<"3 2 1\n";
     }
-    cout<<sum*3;
 }
